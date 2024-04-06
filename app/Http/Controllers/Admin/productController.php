@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 class productController extends Controller
@@ -38,9 +38,11 @@ class productController extends Controller
     }
     public function delete_product(Request $request){
         product::find($request -> product_id) -> delete();
-        return respone() -> json([
+        return response() -> json([
             'success' => true
         ]);
+        
+
     }
     public function edit_product(Request $request){
         $product = product::find($request -> id);
