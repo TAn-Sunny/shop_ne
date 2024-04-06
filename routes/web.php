@@ -25,6 +25,8 @@ Route::post('/admin/product/add', [productController::class, 'insert_product']);
 Route::get('/admin/product/create', [productController::class, 'add_product']);
 Route::get('/admin/product/list', [productController::class, 'list_product']);
 Route::get('/admin/product/delete',[productController::class, 'delete_product']);
+Route::get('/admin/product/edit/{id}', [productController::class, 'edit_product']);
+Route::post('/admin/product/edit/{id}', [productController::class, 'update_product']);
 
 
 
@@ -41,9 +43,7 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 
 
 //frontend
-Route::get('/',function () {
-    return view('frontend.blog-details');
-});
+Route::get('/', [FrontendController::class, 'index']);
 
 Route::get('/frontend/product-details', function () {
     return view('frontend.product-details');

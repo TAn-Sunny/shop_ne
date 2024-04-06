@@ -23,7 +23,7 @@ class productController extends Controller
         $product -> description = $request -> input('description');
         $product -> content = $request -> input('content');
         $product -> image = $request -> input('image');
-        $product_images = implode('*',$request -> input('images'));
+        $product_images = implode("*",$request -> input('images'));
         $product -> images = $product_images;
         $product ->save();
         return redirect() -> back();
@@ -41,5 +41,26 @@ class productController extends Controller
         return respone() -> json([
             'success' => true
         ]);
+    }
+    public function edit_product(Request $request){
+        $product = product::find($request -> id);
+        return view('admin.product.edit', [
+            'tilte' => 'Sửa sản phẩm',
+            'product' => $product
+        ]);
+    }
+    public function update_product(Request $request){
+        $product = product::find($request -> id);
+        $product -> name = $request -> input('name');
+        $product -> material = $request -> input('material');
+        $product -> price_nomal = $request -> input('price_nomal');
+        $product -> price_sale = $request -> input('price_sale');
+        $product -> description = $request -> input('description');
+        $product -> content = $request -> input('content');
+        $product -> image = $request -> input('image');
+        $product_images = implode("*",$request -> input('images'));
+        $product -> images = $product_images;
+        $product ->save();
+        return redirect('/admin/product/list') ;
     }
 }
