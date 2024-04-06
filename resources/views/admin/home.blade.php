@@ -19,7 +19,7 @@
                     </div>
                     <div class="admin-content-main-content">
                         <!--  Nội dung nằm ở đây -->
-                        <H1>LÀM LẠI NÈ</H1>
+                        <H1>PLAPLAPLA</H1>
                     </div>
                 </div>
             </div>
