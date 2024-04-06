@@ -2,154 +2,18 @@
 <html class="no-js" lang="en">
 
 <head>
-    include('frontend.parts.head')
+    @include('frontend.parts.head')
+
 </head>
 
 <body>
 
-    <!--offcanvas menu area start-->
-    <div class="body_overlay">
-
-    </div>
-    <div class="offcanvas_menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="offcanvas_menu_wrapper">
-                        <div class="canvas_close">
-                            <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                        </div>
-                        <div class="header_contact_info">
-                            <ul class="d-flex">
-                                <li class="text-white"> <i class="icons icon-phone"></i> <a href="tel:+05483716566">+054
-                                        8371 65 66</a></li>
-                                <li class="text-white"> <i class="icon-envelope-letter icons"></i> <a
-                                        href="#">uthrstore@domain.com</a></li>
-                            </ul>
-                        </div>
-                        <div class="header_social d-flex">
-                            <span>Follow us</span>
-                            <ul class="d-flex">
-                                <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-facebook icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-instagram icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-youtube icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-pinterest icons"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="language_currency">
-                            <ul class="d-flex">
-                                <li class="language"><a href="#"> Eng <i class="icon-right ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_language">
-                                        <li><a href="#">French</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                        <li><a href="#">Russian</a></li>
-                                    </ul>
-                                </li>
-                                <li class="currency"><a href="#"> USd <i class="icon-right ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_currency">
-                                        <li><a href="#">€ Euro</a></li>
-                                        <li><a href="#">£ Pound Sterling</a></li>
-                                        <li><a href="#">$ US Dollar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="menu" class="text-left ">
-                            <ul class="offcanvas_main_menu">
-                                <li class="menu-item-has-children active">
-                                    <a href="#">Home</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="shop.html">Shop</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="product-details.html"> Product Details</a>
-                                </li>
-                                <li><a href="#">sale</a></li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">pages </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="cart.html">cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog details</a></li>
-                                    </ul>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--offcanvas menu area end-->
+   
     <!--mini cart-->
-    <div class="mini_cart">
-        <div class="cart_gallery">
-            <div class="cart_close">
-                <div class="cart_text">
-                    <h3>cart</h3>
-                </div>
-                <div class="mini_cart_close">
-                    <a href="javascript:void(0)"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-            <div class="cart_item">
-                <div class="cart_img">
-                    <a href="#"><img src="assets/img/product/product1.jpg" alt=""></a>
-                </div>
-                <div class="cart_info">
-                    <a href="#">Primis In Faucibus</a>
-                    <p>1 x <span> $65.00 </span></p>
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-            <div class="cart_item">
-                <div class="cart_img">
-                    <a href="#"><img src="assets/img/product/product2.jpg" alt=""></a>
-                </div>
-                <div class="cart_info">
-                    <a href="#">Letraset Sheets</a>
-                    <p>1 x <span> $60.00 </span></p>
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="mini_cart_table">
-            <div class="cart_table_border">
-                <div class="cart_total">
-                    <span>Sub total:</span>
-                    <span class="price">$125.00</span>
-                </div>
-                <div class="cart_total mt-10">
-                    <span>total:</span>
-                    <span class="price">$125.00</span>
-                </div>
-            </div>
-        </div>
-        <div class="mini_cart_footer">
-            <div class="cart_button">
-                <a href="cart.html"><i class="fa fa-shopping-cart"></i> View cart</a>
-            </div>
-            <div class="cart_button">
-                <a href="checkout.html"><i class="fa fa-sign-in"></i> Checkout</a>
-            </div>
-        </div>
-    </div>
+    @include('frontend.parts.minicart')
     <!--mini cart end-->
     <!--header area start-->
-    include('frontend.parts.header')
+    @include('frontend.parts.header')
     <!--header area end-->
 
 
@@ -164,7 +28,7 @@
             "speed": 300,
             "infinite": true
         }'>
-            <div class="single_slider d-flex align-items-center" data-bgimg="assets/img/slider/slider1.jpg">
+            <div class="single_slider d-flex align-items-center" data-bgimg="{{Asset('frontend/assets/img/slider/slider1.jpg')}}">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-7">
@@ -178,6 +42,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
     <!--slider area end-->
@@ -239,7 +104,7 @@
             </div>
             <div class="banner_container d-flex">
                 <figure class="single_banner position-relative mr-30">
-                    <img src="assets/img/bg/bg1.jpg" alt="">
+                    <img src="{{Asset('frontend/assets/img/bg/bg1.jpg')}}" alt="">
                     <figcaption class="banner_text position-absolute">
                         <h3>Zara Pattern <br> backpacks</h3>
                         <p>Stretch, fresh-cool help you alway <br> comfortable</p>
@@ -247,7 +112,7 @@
                     </figcaption>
                 </figure>
                 <figure class="single_banner position-relative">
-                    <img src="assets/img/bg/bg2.jpg" alt="">
+                    <img src="{{Asset('frontend/assets/img/bg/bg2.jpg')}}" alt="">
                     <figcaption class="banner_text position-absolute">
                         <h3 class="text-white">Basic Color Caps</h3>
                         <p class="text-white">Minimalist never cool, choose and make <br> the simple great again!</p>
@@ -258,14 +123,17 @@
     </section>
     <!-- banner section end -->
 
+    <!-- product section start -->
     
+    <!-- product section end -->
+
     <!-- banner section start -->
     <section class="banner_section banner_style2 mb-109">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <figure class="single_banner position-relative">
-                        <img src="assets/img/bg/bg3.jpg" alt="">
+                        <img src="{{Asset('frontend/assets/img/bg/bg3.jpg')}}" alt="">
                         <div class="banner_text position-absolute">
                             <h3>Minimalist <br> sneaker</h3>
                             <p>Stretch, fresh-cool help you alway <br> comfortable</p>
@@ -276,7 +144,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <figure class="single_banner position-relative">
-                        <img src="assets/img/bg/bg4.jpg" alt="">
+                        <img src="{{Asset('frontend/assets/img/bg/bg4.jpg')}}" alt="">
                         <div class="banner_text position-absolute text__style2">
                             <h3><span>50%</span> OFF <br> for Autumn</h3>
                             <p>Stretch, fresh-cool help you alway <br> comfortable</p>
@@ -319,7 +187,7 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a href="product-details.html">
-                                            <img class="primary_img" src="assets/img/product/product3.jpg"
+                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product3.jpg')}}"
                                                 alt="consectetur">
                                         </a>
                                         <div class="product_action">
@@ -370,7 +238,7 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a href="product-details.html">
-                                            <img class="primary_img" src="assets/img/product/product4.jpg"
+                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product4.jpg')}}"
                                                 alt="consectetur">
                                         </a>
                                         <div class="product_action">
@@ -421,7 +289,7 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a href="product-details.html">
-                                            <img class="primary_img" src="assets/img/product/product1.jpg"
+                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product1.jpg')}}"
                                                 alt="consectetur">
                                         </a>
                                         <div class="product_action">
@@ -473,7 +341,7 @@
                                 <figure>
                                     <div class="product_thumb">
                                         <a href="product-details.html">
-                                            <img class="primary_img" src="assets/img/product/product2.jpg"
+                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product2.jpg')}}"
                                                 alt="consectetur">
                                         </a>
                                         <div class="product_action">
@@ -559,7 +427,7 @@
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog1.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -576,7 +444,7 @@
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog2.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog2.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -592,7 +460,7 @@
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog3.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog3.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -609,7 +477,7 @@
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="assets/img/blog/blog1.jpg" alt=""></a>
+                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -642,7 +510,6 @@
 
     <!-- JS
 ============================================ -->
-
     @include('frontend.parts.JS')
 </body>
 

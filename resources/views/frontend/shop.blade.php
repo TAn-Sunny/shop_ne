@@ -88,12 +88,13 @@
                     </div>
                     <!--breadcrumbs area end-->
 
-                    <div class="shop_banner d-flex align-items-center" data-bgimg="{{Asset('frontend/assets/img/bg/bg_shop.jpg')}}">
+                    <div class="shop_banner d-flex align-items-center" data-bgimg="{{Asset('frontend/assets/img/bg/shop_bg.jpg')}}">
                         <div class="shop_banner_text">
                             <h2>essential <br> wears</h2>
                             <p>The collections basic items <br> essential for all girls</p>
                         </div>
                     </div>
+                    
                     <!--shop toolbar start-->
                     <div class="shop_toolbar_wrapper d-flex justify-content-between align-items-center">
                         <div class="page_amount">
@@ -662,7 +663,7 @@
 
 <!-- JS
 ============================================ -->
-include('frontend.parts.JS')
+    @include('frontend.parts.JS')
 
 
 </body>

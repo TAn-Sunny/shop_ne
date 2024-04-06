@@ -42,7 +42,7 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 
 //frontend
 Route::get('/',function () {
-    return view('frontend.shop');
+    return view('frontend.blog-details');
 });
 
 Route::get('/frontend/product-details', function () {

@@ -7,145 +7,9 @@
 
 <body>
 
-    <!--offcanvas menu area start-->
-    <div class="body_overlay">
-
-    </div>
-    <div class="offcanvas_menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="offcanvas_menu_wrapper">
-                        <div class="canvas_close">
-                            <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                        </div>
-                        <div class="header_contact_info">
-                            <ul class="d-flex">
-                                <li class="text-white"> <i class="icons icon-phone"></i> <a href="tel:+05483716566">+054 8371 65 66</a></li>
-                                <li class="text-white"> <i class="icon-envelope-letter icons"></i> <a href="#">uthrstore@domain.com</a></li>
-                            </ul>
-                        </div>
-                        <div class="header_social d-flex">
-                            <span>Follow us</span>
-                            <ul class="d-flex">
-                                <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-facebook icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-instagram icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-youtube icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-pinterest icons"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="language_currency">
-                            <ul class="d-flex">
-                                <li class="language"><a href="#"> Eng <i class="icon-right ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_language">
-                                        <li><a href="#">French</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                        <li><a href="#">Russian</a></li>
-                                    </ul>
-                                </li>
-                                <li class="currency"><a href="#"> USd <i class="icon-right ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_currency">
-                                        <li><a href="#">€ Euro</a></li>
-                                        <li><a href="#">£ Pound Sterling</a></li>
-                                        <li><a href="#">$ US Dollar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="menu" class="text-left ">
-                            <ul class="offcanvas_main_menu">
-                                <li class="menu-item-has-children active">
-                                    <a href="#">Home</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="/frontend/home">Shop</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="/frontend/product-details"> Product Details</a>
-                                </li>
-                                <li><a href="#">sale</a></li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">pages </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="/frontend/cart">cart</a></li>
-                                        <li><a href="/frontend/checkout">Checkout</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="/frontend/blog">blog</a></li>
-                                        <li><a href="/frontend/blog-details">blog details</a></li>
-                                    </ul>
-
-                                </li>
-                                <li><a href="#">buy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--offcanvas menu area end-->
+  
     <!--mini cart-->
-    <div class="mini_cart">
-        <div class="cart_gallery">
-            <div class="cart_close">
-                <div class="cart_text">
-                    <h3>cart</h3>
-                </div>
-                <div class="mini_cart_close">
-                    <a href="javascript:void(0)"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-            <div class="cart_item">
-               <div class="cart_img">
-                   <a href="#"><img src="{{Asset('frontend/assets/img/product/product1.jpg')}}" alt=""></a>
-               </div>
-                <div class="cart_info">
-                    <a href="#">Primis In Faucibus</a>
-                    <p>1 x <span> $65.00 </span></p>
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-            <div class="cart_item">
-               <div class="cart_img">
-                   <a href="#"><img src="{{Asset('frontend/assets/img/product/product2.jpg')}}" alt=""></a>
-               </div>
-                <div class="cart_info">
-                    <a href="#">Letraset Sheets</a>
-                    <p>1 x <span> $60.00 </span></p>
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="mini_cart_table">
-            <div class="cart_table_border">
-                <div class="cart_total">
-                    <span>Sub total:</span>
-                    <span class="price">$125.00</span>
-                </div>
-                <div class="cart_total mt-10">
-                    <span>total:</span>
-                    <span class="price">$125.00</span>
-                </div>
-            </div>
-        </div>
-        <div class="mini_cart_footer">
-           <div class="cart_button">
-                <a href="/frontend/cart"><i class="fa fa-shopping-cart"></i> View cart</a>
-            </div>
-            <div class="cart_button">
-                <a href="/frontend/checkout"><i class="fa fa-sign-in"></i> Checkout</a>
-            </div>
-        </div>
-    </div>
+    @include('frontend.parts.minicart')
     <!--mini cart end-->
     <!--header area start-->
     @include('frontend.parts.header')
@@ -189,16 +53,15 @@
                                    <figure class="related_thumb">
                                        <img src="{{Asset('frontend/assets/img/blog/related1.jpg')}}" alt="">
                                     <div class="related_popup_icon">
-                                        <a class="port_popup" href="assets/img/blog/related1.jpg"><i class="icon-size-fullscreen icons"></i></a>
+                                        <a class="port_popup" href="{{Asset('frontend/assets/img/blog/related1.jpg')}}"><i class="icon-size-fullscreen icons"></i></a>
                                     </div>
                                    </figure>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                    <figure class="related_thumb">
-
                                        <img src="{{Asset('frontend/assets/img/blog/related2.jpg')}}" alt="">
                                     <div class="related_popup_icon">
-                                        <a class="port_popup" href="assets/img/blog/related2.jpg"><i class="icon-size-fullscreen icons"></i></a>
+                                        <a class="port_popup" href="{{Asset('frontend/assets/img/blog/related2.jpg')}}"><i class="icon-size-fullscreen icons"></i></a>
                                     </div>
                                    </figure>
                                 </div>
@@ -224,12 +87,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="blog_navigation">
-                            <ul class="d-flex justify-content-between">
-                                <li class="previous"><a href="#"><i class="icon-arrow-left icons"></i> Previous</a> <span>How to combine typography perfect for any design</span></li>
-                                <li class="next"><a href="#">Next  <i class="icon-arrow-right icons"></i></a> <span>Cocooil - Review</span></li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -242,7 +100,7 @@
                             <h3>02 Comments	</h3>
                             <div class="comment_list d-flex">
                                 <div class="comment_thumb">
-                                    <img src="{{Asset('frontend/assets/img/blog/post-comment1.png')}}" alt="">
+                                    <img src="{{Asset('frontend/assets/img/blog/post-comment1.png" alt="">
                                 </div>
                                 <div class="comment_content border-top">
                                     <div class="comment_meta d-flex align-items-center">
@@ -257,8 +115,7 @@
                             </div>
                             <div class="comment_list d-flex">
                                 <div class="comment_thumb">
-                               
-                                    <img src="{{Asset('frontend/assets/img/blog/post-comment2.png')}}" alt="">
+                                    <img src="{{Asset('frontend/assets/img/blog/post-comment2.png" alt="">
                                 </div>
                                 <div class="comment_content border-top">
                                     <div class="comment_meta d-flex align-items-center">

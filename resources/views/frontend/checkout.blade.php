@@ -7,137 +7,9 @@
 
 <body>
 
-    <!--offcanvas menu area start-->
-    <div class="body_overlay">
 
-    </div>
-    <div class="offcanvas_menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="offcanvas_menu_wrapper">
-                        <div class="canvas_close">
-                            <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                        </div>
-                       
-                        <div class="header_social d-flex">
-                            <span>Follow us</span>
-                            <ul class="d-flex">
-                                <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-facebook icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-instagram icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-youtube icons"></i></a></li>
-                                <li><a href="#"><i class="icon-social-pinterest icons"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="language_currency">
-                            <ul class="d-flex">
-                                <li class="language"><a href="#"> Eng <i class="icon-right ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_language">
-                                        <li><a href="#">French</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                        <li><a href="#">Russian</a></li>
-                                    </ul>
-                                </li>
-                                <li class="currency"><a href="#"> USd <i class="icon-right ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_currency">
-                                        <li><a href="#">€ Euro</a></li>
-                                        <li><a href="#">£ Pound Sterling</a></li>
-                                        <li><a href="#">$ US Dollar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="menu" class="text-left ">
-                            <ul class="offcanvas_main_menu">
-                                <li class="menu-item-has-children active">
-                                    <a href="#">Home</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="/frontend/home">Shop</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="/frontend/product-details"> Product Details</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <ul class="sub-menu">
-                                        <li><a href="/frontend/cart">cart</a></li>
-                                        <li><a href="/frontend/checkout">Checkout</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="/frontend/blog">blog</a></li>
-                                        <li><a href="/frontend/blog-details">blog details</a></li>
-                                    </ul>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--offcanvas menu area end-->
     <!--mini cart-->
-    <div class="mini_cart">
-        <div class="cart_gallery">
-            <div class="cart_close">
-                <div class="cart_text">
-                    <h3>cart</h3>
-                </div>
-                <div class="mini_cart_close">
-                    <a href="javascript:void(0)"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-            <div class="cart_item">
-               <div class="cart_img">
-                   <a href="#"><img src="{{Asset('frontend/assets/img/product/product1.jpg')}}" alt=""></a>
-               </div>
-                <div class="cart_info">
-                    <a href="#">Primis In Faucibus</a>
-                    <p>1 x <span> $65.00 </span></p>
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-            <div class="cart_item">
-               <div class="cart_img">
-                   <a href="#"><img src="{{Asset('frontend/assets/img/product/product2.jpg')}}" alt=""></a>
-               </div>
-                <div class="cart_info">
-                    <a href="#">Letraset Sheets</a>
-                    <p>1 x <span> $60.00 </span></p>
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="icon-close icons"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="mini_cart_table">
-            <div class="cart_table_border">
-                <div class="cart_total">
-                    <span>Sub total:</span>
-                    <span class="price">$125.00</span>
-                </div>
-                <div class="cart_total mt-10">
-                    <span>total:</span>
-                    <span class="price">$125.00</span>
-                </div>
-            </div>
-        </div>
-        <div class="mini_cart_footer">
-           <div class="cart_button">
-                <a href="/frontend/cart"><i class="fa fa-shopping-cart"></i> View cart</a>
-            </div>
-            <div class="cart_button">
-                <a href="/frontend/checkout"><i class="fa fa-sign-in"></i> Checkout</a>
-            </div>
-        </div>
-    </div>
+    @include('frontend.parts.minicart')
     <!--mini cart end-->
     <!--header area start-->
     @include('frontend.parts.header')
@@ -268,40 +140,6 @@
                                 <label> Phone <span>*</span></label>
                                 <input  type="text">
                             </div>
-                            <p class="different_address"><i class="ion-android-checkbox-outline"></i> Ship to a different address?</p>
-                            <div class="checkout_form_input">
-                                <label for="country2">country <span>*</span></label>
-                                    <select class="select_option" name="cuntry" id="country2">
-                                    <option value="2">United Kingdom (UK)  </option>
-                                    <option value="3">Algeria</option>
-                                    <option value="4">Afghanistan</option>
-                                    <option value="5">Ghana</option>
-                                    <option value="6">Albania</option>
-                                    <option value="7">Bahrain</option>
-                                    <option value="8">Colombia</option>
-                                    <option value="9">Dominican Republic</option>
-                                </select>
-                            </div>
-                            <div class="checkout_form_input">
-                                <label>First Name <span>*</span></label>
-                                <input type="text">
-                            </div>
-                            <div class="checkout_form_input">
-                                <label>Last Name  <span>*</span></label>
-                                <input type="text">
-                            </div>
-                            <div class="checkout_form_input">
-                                <label>Company Name</label>
-                                <input type="text">
-                            </div>
-                            <div class="checkout_form_input">
-                                <label>Town / City <span>*</span></label>
-                                <input  type="text">
-                            </div>
-                            <div class="checkout_form_input">
-                                <label>Order Notes</label>
-                                <textarea></textarea>
-                            </div>
                         </form>
                     </div>
                     <div class="col-lg-5 col-md-6">
@@ -355,12 +193,7 @@
                                             <input id="payment2" name="check_method" type="radio" data-target="createp_account" />
                                             <span class="checkmark"></span>
                                         </div>
-                                        <label for="payment2" data-toggle="collapse" data-target="#method2" >cheque payment</label>
-                                        <div id="method2" class="collapse two" data-parent="#accordion">
-                                            <div class="card-body1">
-                                               <p>Donec sed odio dui. Nulla vitae elit libero, a phara etra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. </p>
-                                            </div>
-                                        </div>
+                                       
                                     </div>
                                     <div class="panel-default">
                                         <div class="panel_radio">
@@ -412,8 +245,6 @@
 <!-- JS
 ============================================ -->
     @include('frontend.parts.JS')
-
-
 
 </body>
 

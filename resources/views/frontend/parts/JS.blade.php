@@ -1,3 +1,4 @@
+
 <script src="{{Asset('frontend/assets/js/vendor/jquery-3.4.1.min.js')}}"></script>
 <script src="{{Asset('frontend/assets/js/vendor/popper.js')}}"></script>
 <script src="{{Asset('frontend/assets/js/vendor/bootstrap.min.js')}}"></script>
@@ -17,3 +18,4 @@
 <!-- Main JS -->
 <script src="{{Asset('frontend/assets/js/main.js')}}"></script>
 
+@yield('JS')

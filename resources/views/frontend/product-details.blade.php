@@ -42,10 +42,10 @@
                     <div class="product_zoom_gallery">
                        <div class="zoom_gallery_inner d-flex">
                            <div class="zoom_tab_img">
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="assets/img/product/small-product/product1.png" alt="tab-thumb"></a>
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="assets/img/product/small-product/product2.png" alt="tab-thumb"></a>
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="assets/img/product/small-product/product3.png" alt="tab-thumb"></a>
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="assets/img/product/small-product/product4.png" alt="tab-thumb"></a>
+                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product1.png')}}" alt="tab-thumb"></a>
+                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product2.png')}}" alt="tab-thumb"></a>
+                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product3.png')}}" alt="tab-thumb"></a>
+                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product4.png')}}" alt="tab-thumb"></a>
                            </div>
                            <div class="product_zoom_main_img">
                                 <div class="product_zoom_thumb">
@@ -225,7 +225,7 @@
                                     <h2>1 review for Donec eu furniture</h2>
                                     <div class="reviews_comment_box">
                                         <div class="comment_thmb">
-                                            <img src="assets/img/blog/comment2.jpg" alt="">
+                                            <img src="{{Asset('frontend/assets/img/blog/comment2.jpg')}}" alt="">
                                         </div>
                                         <div class="comment_text">
                                             <div class="reviews_meta">
@@ -559,14 +559,12 @@
     <!--newsletter section start-->
     @include('frontend.parts.newsletter')
     <!--newsletter section end-->
-
-
     <!--footer area start-->
    @include('frontend.parts.footer')
     <!--footer area end-->
 <!-- JS
 ============================================ -->
-include('frontend.parts.JS')
+    @include('frontend.parts.JS')
 </body>
 
 </html>
