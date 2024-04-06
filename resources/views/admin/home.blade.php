@@ -19,7 +19,7 @@
                     </div>
                     <div class="admin-content-main-content">
                         <!--  Nội dung nằm ở đây -->
-                        <H1>HELLO - HALLO</H1>
+                        <H1>DIÊMMEMEMME</H1>
                     </div>
                 </div>
             </div>
