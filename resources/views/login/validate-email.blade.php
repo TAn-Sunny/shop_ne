@@ -1,8 +1,8 @@
 <?php
 
-$mysqli = require __DIR__ . "/login/database.php";
+$mysqli = require __DIR__ . "/login/database";
 
-$sql = sprintf("SELECT * FROM user
+$sql = sprintf("SELECT * FROM users
                 WHERE email = '%s'",
                 $mysqli->real_escape_string($_GET["email"]));
                 

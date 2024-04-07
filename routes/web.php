@@ -70,3 +70,11 @@ Route::get('/frontend/home', function () {
 });
 
 
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@login');
+Route::get('/logout', 'LoginController@logout');
+Route::get('/signup', 'SignupController@index');
+Route::post('/signup', 'SignupController@signup');
+Route::get('/validate-email', 'EmailController@validate');
+Route::get('/laravel-coding/login/validate-email', 'App\Http\Controllers\EmailController@validateEmail');
+

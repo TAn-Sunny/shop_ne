@@ -1,32 +1,19 @@
 <?php
 
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+
 $is_invalid = false;
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (request()->isMethod('post')) {
     
-    $mysqli = require __DIR__ . "/login/database.php";
+    $user = User::where('email', request('email'))->first();
     
-    $sql = sprintf("SELECT * FROM user
-                    WHERE email = '%s'",
-                   $mysqli->real_escape_string($_POST["email"]));
-    
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-    
-    if ($user) {
+    if ($user && Hash::check(request('password'), $user->password)) {
         
-        if (password_verify($_POST["password"], $user["password_hash"])) {
-            
-            session_start();
-            
-            session_regenerate_id();
-            
-            $_SESSION["user_id"] = $user["id"];
-            
-            header("Location: index.php");
-            exit;
-        }
+        session(['user_id' => $user->id]);
+        
+        return redirect('index');
     }
     
     $is_invalid = true;

@@ -4,25 +4,25 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    $mysqli = require __DIR__ . "/login/database.php";
+    $mysqli = require __DIR__ . "/login/database";
     
-    $sql = sprintf("SELECT * FROM user
+    $sql = sprintf("SELECT * FROM users
                     WHERE email = '%s'",
                    $mysqli->real_escape_string($_POST["email"]));
     
     $result = $mysqli->query($sql);
     
-    $user = $result->fetch_assoc();
+    $users = $result->fetch_assoc();
     
-    if ($user) {
+    if ($users) {
         
-        if (password_verify($_POST["password"], $user["password_hash"])) {
+        if (password_verify($_POST["password"], $users["password_hash"])) {
             
             session_start();
             
             session_regenerate_id();
             
-            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["users_id"] = $users["id"];
             
             header("Location: index.php");
             exit;

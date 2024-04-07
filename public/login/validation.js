@@ -38,7 +38,7 @@ validation
         },
         {
             validator: (value) => () => {
-                return fetch("validate-email.php?email=" + encodeURIComponent(value))
+                return fetch("/laravel-coding/login/validate-email?email=" + encodeURIComponent(value))
                        .then(function(response) {
                            return response.json();
                        })

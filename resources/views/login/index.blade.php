@@ -2,16 +2,16 @@
 
 session_start();
 
-if (isset($_SESSION["user_id"])) {
+if (isset($_SESSION["users_id"])) {
     
-    $mysqli = require __DIR__ . "/login/database.php";
+    $mysqli = require __DIR__ . "/login/database";
     
-    $sql = "SELECT * FROM user
-            WHERE id = {$_SESSION["user_id"]}";
+    $sql = "SELECT * FROM users
+            WHERE id = {$_SESSION["users_id"]}";
             
     $result = $mysqli->query($sql);
     
-    $user = $result->fetch_assoc();
+    $users = $result->fetch_assoc();
 }
 
 ?>
@@ -27,9 +27,9 @@ if (isset($_SESSION["user_id"])) {
   <body>
     <h1>Hello</h1>
 
-    <?php if (isset($user)): ?>
+    <?php if (isset($users)): ?>
 
-        <p>Hello <?= htmlspecialchars($user["name"]) ?></p>
+        <p>Hello <?= htmlspecialchars($users["name"]) ?></p>
 
         <p><a href = "login.logout">Log out</a></p>
 
