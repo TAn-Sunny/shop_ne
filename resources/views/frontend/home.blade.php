@@ -35,7 +35,7 @@
                                 <span>Come to us</span>
                                 <h1>make you be fashionable</h1>
                                 <p>"You will discover the latest trends and elevate <br >your style to new heights with us."</p>
-                                <a class="btn btn-primary" href="shop.html">Explore Now</a>
+                                <a class="btn btn-primary" href="/frontend/shop">Explore Now</a>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                 <span>Come to us</span>
                                 <h1>Make you be confident</h1>
                                 <p>"You will discover a range of fashionable items <br> that will boost your confidence and help you <br> express your unique style effortlessly."</p>
-                                <a class="btn btn-primary" href="shop.html">Explore Now</a>
+                                <a class="btn btn-primary" href="/frontend/shop">Explore Now</a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 <span>Come to us</span>
                                 <h1>Make you be economical</h1>
                                 <p>"You will find high-quality fashion items that <br> not only enhance your style but also ensure <br> your savings."</p>
-                                <a class="btn btn-primary" href="shop.html">Explore Now</a>
+                                <a class="btn btn-primary" href="/frontend/shop">Explore Now</a>
                             </div>
                         </div>
                     </div>
