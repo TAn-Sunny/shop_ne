@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\FrontendController;
+use App\Models\product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,16 +44,8 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 
 
 //frontend
-Route::get('/', function () {
-    return view('login.login');
-});
-
-Route::get('/frontend/product-details', function () {
-    return view('frontend.product-details');
-});
-Route::get('/frontend/cart', function () {
-    return view('frontend.cart');
-});
+Route::get('/', [FrontendController ::class,'index']);
+Route::get('/frontend/product_details/{id}',[FrontendController::class,'show_product']);
 Route::get('/frontend/blog-details', function () {
     return view('frontend.blog-details');
 });
@@ -62,13 +55,8 @@ Route::get('/frontend/blog', function () {
 Route::get('/frontend/checkout', function () {
     return view('frontend.checkout');
 });
-Route::get('/frontend/index', function () {
-    return view('frontend.index');
-});
-Route::get('/frontend/home', function () {
-    return view('frontend.shop');
-});
-
+Route::get('/frontend/shop', [FrontendController ::class,'shop']);
+Route::get('/frontend/home', [FrontendController ::class,'index']);
 
 Route::get('/login', 'LoginController@index');
 Route::post('/login', 'LoginController@login');
@@ -78,3 +66,7 @@ Route::post('/signup', 'SignupController@signup');
 Route::get('/validate-email', 'EmailController@validate');
 Route::get('/laravel-coding/login/validate-email', 'App\Http\Controllers\EmailController@validateEmail');
 
+//cart
+Route::post('/frontend/cart/add',[FrontendController::class,'add_cart']);
+Route::get('/frontend/cart', [FrontendController::class,'show_cart']);
+Route::get('/frontend/cart/delete/{id}', [FrontendController::class,'delete_cart']);

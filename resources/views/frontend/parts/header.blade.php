@@ -8,16 +8,16 @@
                                 <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
                             </div>
                             <div class="header_logo">
-                                <a class="sticky_none" href="index.html"><img src="{{Asset('frontend/assets/img/logo/logo.png')}}" alt=""></a>
+                                <a class="sticky_none" href="{{Asset('frontend/home')}}"><img src="{{Asset('frontend/assets/img/logo/logo.png')}}" alt=""></a>
                             </div>
                             <!--main menu start-->
                             <div class="main_menu d-none d-lg-block">
                                 <nav>
                                     <ul class="d-flex">
-                                        <li><a href="{{Asset('frontend/index')}}">Home</a> </li>
-                                        <li><a class="active" href="{{Asset('frontend/home')}}">shop</a></li>
-                                        <li><a href="{{Asset('frontend/product-details')}}">product</a></li>
-                                        
+                                        <li><a href="{{Asset('frontend/home')}}">Home</a> </li>
+                                        <li><a href="{{Asset('frontend/shop')}}">Shop</a> </li>
+                                        <li><a href="{{Asset('frontend/product_details')}}">product</a></li>
+
                                         <li><a href="{{Asset('frontend/blog')}}">blog</a>
                                             <ul class="sub_menu">
                                                 <li><a href="{{Asset('frontend/blog')}}">Blog Pages</a></li>

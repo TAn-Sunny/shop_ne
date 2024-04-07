@@ -8,13 +8,14 @@
 
 <body>
 
-
+   
     <!--mini cart-->
     @include('frontend.parts.minicart')
     <!--mini cart end-->
     <!--header area start-->
     @include('frontend.parts.header')
     <!--header area end-->
+
 
     <!--slider area start-->
     <section class="slider_section mb-63">
@@ -23,56 +24,27 @@
             "slidesToScroll": 1,
             "arrows": true,
             "dots": true,
-            "autoplay": true,
+            "autoplay": false,
             "speed": 300,
             "infinite": true
         }'>
-            <div class="single_slider d-flex align-items-center" data-bgimg="{{Asset('frontend/assets/img/slider/slider4.jpg')}}">
+            <div class="single_slider d-flex align-items-center" data-bgimg="{{Asset('frontend/assets/img/slider/slider1.jpg')}}">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-7">
                             <div class="slider_text">
-                                <span>Come to us</span>
-                                <h1>make you be fashionable</h1>
-                                <p>"You will discover the latest trends and elevate <br >your style to new heights with us."</p>
-                                <a class="btn btn-primary" href="/frontend/shop">Explore Now</a>
+                                <span>Lookbook</span>
+                                <h1>fashion trend for autum girls with vibes</h1>
+                                <p>We love seeing how our Aslam wearers like <br> to wear their Norda</p>
+                                <a class="btn btn-primary" href="shop.html">Explore Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="single_slider d-flex align-items-center" data-bgimg="{{Asset('frontend/assets/img/slider/slider2.jpg')}}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-7">
-                            <div class="slider_text">
-                                <span>Come to us</span>
-                                <h1>Make you be confident</h1>
-                                <p>"You will discover a range of fashionable items <br> that will boost your confidence and help you <br> express your unique style effortlessly."</p>
-                                <a class="btn btn-primary" href="/frontend/shop">Explore Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider d-flex align-items-center" data-bgimg="{{Asset('frontend/assets/img/slider/slider3.jpg')}}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-7">
-                            <div class="slider_text">
-                                <span>Come to us</span>
-                                <h1>Make you be economical</h1>
-                                <p>"You will find high-quality fashion items that <br> not only enhance your style but also ensure <br> your savings."</p>
-                                <a class="btn btn-primary" href="/frontend/shop">Explore Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
-
-
     <!--slider area end-->
 
     <!--shipping section start-->
@@ -152,7 +124,7 @@
     <!-- banner section end -->
 
     <!-- product section start -->
-
+    
     <!-- product section end -->
 
     <!-- banner section start -->
@@ -167,7 +139,7 @@
                             <p>Stretch, fresh-cool help you alway <br> comfortable</p>
                             <a class="btn btn-primary" href="shop.html">Shop Now</a>
                         </div>
-
+                        
                     </figure>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -178,7 +150,7 @@
                             <p>Stretch, fresh-cool help you alway <br> comfortable</p>
                             <a class="btn btn-primary" href="shop.html">Shop Now</a>
                         </div>
-
+                       
                     </figure>
                 </div>
             </div>
@@ -257,7 +229,7 @@
     </article>
 @endforeach
     <!-- End Product -->
-
+                            
                         </div>
                     </div>
                 </div>
