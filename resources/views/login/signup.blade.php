@@ -4,7 +4,7 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    $mysqli = require __DIR__ . "/database.php";
+    $mysqli = require __DIR__ . "/login/database.php";
     
     $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",
@@ -40,9 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign in & Sign up Form</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{Asset('login/style.css')}}" />
      <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"  defer></script>
-    <script src = "validation.js" defer></script>
+    <script src = "{{Asset('login/validation.js')}}" defer></script>
   </head>
   <body>
     <main>
@@ -53,10 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <em>Invalid login</em>
             <?php endif; ?>
             
-            <form action="login.php" autocomplete="off" class="sign-up-form" 
+            <form action="login.login" autocomplete="off" class="sign-up-form" 
             method = "post" id = login>
               <div class="logo">
-                <img src="./img/logo.png" alt="easyclass" />
+                <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
                 <h4>easyclass</h4>
               </div>
 
@@ -104,9 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               </div>
             </form>
 
-            <form action="process-signup.php" autocomplete="off" class="sign-in-form" method = "post" id = "signup" novalidate>
+            <form action="login.process-signup" autocomplete="off" class="sign-in-form" method = "post" id = "signup" novalidate>
               <div class="logo">
-                <img src="./img/logo.png" alt="easyclass" />
+                <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
                 <h4>easyclass</h4>
               </div>
 
@@ -186,9 +186,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <div class="carousel">
             <div class="images-wrapper">
-              <img src="./img/image1.png" class="image img-1 show" alt="" />
-              <img src="./img/image2.png" class="image img-2" alt="" />
-              <img src="./img/image3.png" class="image img-3" alt="" />
+              <img src="{{Asset('login/img/image1.png')}}" class="image img-1 show" alt="" />
+              <img src="{{Asset('login/img/image2.png')}}" class="image img-2" alt="" />
+              <img src="{{Asset('login/img/image3.png')}}" class="image img-3" alt="" />
             </div>
 
             <div class="text-slider">
@@ -213,7 +213,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- Javascript file -->
 
-    <script src="app.js"></script>
+    <script src="{{Asset('login/app.js')}}"></script>
   
   </body>
 </html>

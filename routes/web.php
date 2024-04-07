@@ -44,7 +44,7 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 
 //frontend
 Route::get('/', function () {
-    return view('login.signup');
+    return view('login.login');
 });
 
 Route::get('/frontend/product-details', function () {
