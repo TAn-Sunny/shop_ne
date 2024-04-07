@@ -25,7 +25,7 @@
                     <td>
                         <a class="edit-class" href="">Sửa</a>
                         |
-                        <a onclick= "removeRow(product_id = {{$product -> id}} ,url='/admin/product/delete')" class="delete-class" href="#">Xóa</a>
+                        <a onclick="removeRow(product_id={{$product -> id}},url ='/admin/product/delete')" class="delete-class" href="#">Xóa</a>
                     </td>
                 </tr>
             @endforeach
@@ -43,9 +43,10 @@
             method: 'GET',
             dataType:'JSON',
             success: function(res){
-              if(res.success == true){
-                location.reload();
-              }
+                console.log(res)
+            //   if(res.success == true){
+            //     location.reload();
+            //   }
             }
         }
         )

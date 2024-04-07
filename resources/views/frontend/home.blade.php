@@ -210,16 +210,7 @@
                                         </div>
                                     </div>
                                     <figcaption class="product_content text-center">
-                                        <div class="product_ratting">
-                                            <ul class="d-flex justify-content-center">
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><span>(2)</span></li>
-                                            </ul>
-                                        </div>
+                                        
                                         <h4 class="product_name"><a href="product-details.html">Basic White Simple
                                                 Sneaker</a></h4>
                                         <div class="price_box">
@@ -261,16 +252,7 @@
                                         </div>
                                     </div>
                                     <figcaption class="product_content text-center">
-                                        <div class="product_ratting">
-                                            <ul class="d-flex justify-content-center">
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><span>(8)</span></li>
-                                            </ul>
-                                        </div>
+                                        
                                         <h4 class="product_name"><a href="product-details.html">Simple Rounded
                                                 Sunglasses</a></h4>
                                                 <div class="price_box">
@@ -313,16 +295,7 @@
                                         </div>
                                     </div>
                                     <figcaption class="product_content text-center">
-                                        <div class="product_ratting">
-                                            <ul class="d-flex justify-content-center">
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><span>(4)</span></li>
-                                            </ul>
-                                        </div>
+                                     
                                         <h4 class="product_name"><a href="product-details.html">Basic Joggin Shorts</a>
                                         </h4>
                                         <div class="price_box">
@@ -366,16 +339,7 @@
                                         
                                     </div>
                                     <figcaption class="product_content text-center">
-                                        <div class="product_ratting">
-                                            <ul class="d-flex justify-content-center">
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                                <li><span>(6)</span></li>
-                                            </ul>
-                                        </div>
+                                       
                                         <h4 class="product_name"><a href="product-details.html">Make Thing Happen
                                                 T-Shirts</a></h4>
                                         <div class="price_box">

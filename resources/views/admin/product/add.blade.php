@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<form action="/admin/product/add" method="post" >
+<form action="/admin/product/add" enctype="multipart/form-data" method="post" >
     <div class="admin-content-main-content-product-add">
         <div class="admin-content-main-content-left">
             <div class="admin-content-main-content-two-input">
@@ -8,7 +8,7 @@
                 <input type="text" value="{{old('material')}}" name="material" placeholder="Chất liệu">
             </div>
             <div class="admin-content-main-content-two-input">
-                <input type="text" value="{{old('price_normal')}}" name="price_normal" placeholder="Giá bán">
+                <input type="text" value="{{old('price_nomal')}}" name="price_nomal" placeholder="Giá bán">
                 <input type="text" value="{{old('price_sale')}}" name="price_sale" placeholder="Giá giảm">
             </div>
             <textarea class="editor_des" value="{{old('description')}}" name="description" placeholder="Đặc điểm nổi bật" id="" ></textarea>
