@@ -36,6 +36,9 @@
 
     <!--product details start-->
     <section class="product_details mb-135">
+        <form action="/frontend/cart/add" method="post">
+            
+        
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
@@ -67,7 +70,6 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
-                       <form action="#">
                             <h1>{{$product -> name}}</h1>
                             <div class="product_desc">
                                 <p>{{$product -> material}}</p>
@@ -82,18 +84,20 @@
                             <div class="product_variant">
                                 <div class="variant_quantity_btn d-flex">
                                     <div class="pro-qty border">
-                                        <input min="1" max="100" type="tex" value="1">
+                                        <input onkeydown="return false" type="tex" value="1" name="product_quantity">
+                                        <input type="hidden" value="{{$product -> id}}"  name="product_id">
                                     </div>
                                     <button class="button btn btn-primary" type="submit"><i class="ion-android-add"></i> Add To Cart</button>
-                                    <a class="wishlist" href="#"><i class="ion-ios-heart"></i></a>
+                                    <a class="wishlist" href=""><i class="ion-ios-heart"></i></a>
                                 </div>
                             </div>
-                           
-                        </form>
+                        
                     </div>
                 </div>
             </div>
         </div>
+        @csrf
+        </form>
     </section>
     <!--product details end-->
 
@@ -468,6 +472,7 @@
 <!-- JS
 ============================================ -->
     @include('frontend.parts.JS')
+
 </body>
 
 </html>

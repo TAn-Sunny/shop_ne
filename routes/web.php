@@ -46,9 +46,6 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 //frontend
 Route::get('/', [FrontendController ::class,'index']);
 Route::get('/frontend/product_details/{id}',[FrontendController::class,'show_product']);
-Route::get('/frontend/cart', function () {
-    return view('frontend.cart');
-});
 Route::get('/frontend/blog-details', function () {
     return view('frontend.blog-details');
 });
@@ -61,4 +58,7 @@ Route::get('/frontend/checkout', function () {
 Route::get('/frontend/shop', [FrontendController ::class,'shop']);
 Route::get('/frontend/home', [FrontendController ::class,'index']);
 
-
+//cart
+Route::post('/frontend/cart/add',[FrontendController::class,'add_cart']);
+Route::get('/frontend/cart', [FrontendController::class,'show_cart']);
+Route::get('/frontend/cart/delete/{id}', [FrontendController::class,'delete_cart']);
