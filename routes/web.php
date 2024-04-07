@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\FrontendController;
+use App\Models\product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,13 +45,7 @@ Route::post('/uploads', [UploadController::class,'uploadImages']);
 
 //frontend
 Route::get('/', [FrontendController ::class,'index']);
-Route::get('/', function () {
-    return view('login.login');
-});
-
-Route::get('/frontend/product-details/{id}', function () {
-    return view('frontend.product-details');
-});
+Route::get('/frontend/product_details/{id}',[FrontendController::class,'show_product']);
 Route::get('/frontend/cart', function () {
     return view('frontend.cart');
 });
@@ -63,11 +58,7 @@ Route::get('/frontend/blog', function () {
 Route::get('/frontend/checkout', function () {
     return view('frontend.checkout');
 });
-Route::get('/frontend/index', function () {
-    return view('frontend.index');
-});
-Route::get('/frontend/home', function () {
-    return view('frontend.shop');
-});
+Route::get('/frontend/shop', [FrontendController ::class,'shop']);
+Route::get('/frontend/home', [FrontendController ::class,'index']);
 
 

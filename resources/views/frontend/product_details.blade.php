@@ -25,7 +25,7 @@
                         <ul>
                             <li><a href="index.html">home</a></li>
                             <li><a href="shop.html">shop</a></li>
-                            <li>Product Example</li>
+                            <li>Product</li>
                         </ul>
                     </div>
                 </div>
@@ -42,24 +42,25 @@
                     <div class="product_zoom_gallery">
                        <div class="zoom_gallery_inner d-flex">
                            <div class="zoom_tab_img">
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product1.png')}}" alt="tab-thumb"></a>
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product2.png')}}" alt="tab-thumb"></a>
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product3.png')}}" alt="tab-thumb"></a>
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset('frontend/assets/img/product/small-product/product4.png')}}" alt="tab-thumb"></a>
+                               @php 
+                                    $product_images = explode('*', $product -> images);
+                               @endphp
+                                @foreach ($product_images as $product_image)
+                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset($product_image)}}" alt="tab-thumb"></a>
+                                @endforeach
                            </div>
                            <div class="product_zoom_main_img">
                                 <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
+                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product -> image)}}" alt="">
                                 </div>
                                 <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
+                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product_image)}}" alt="">
                                 </div>
                                 <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
+                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product_image)}}" alt="">
                                 </div>
-                                <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
-                                </div>
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -67,16 +68,16 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
                        <form action="#">
-                            <h1>Edwin T-Shirt Logo Script Print in Navy</h1>
+                            <h1>{{$product -> name}}</h1>
                             <div class="product_desc">
-                                <p>Material: Glass and silver</p>
+                                <p>{{$product -> material}}</p>
                             </div>
                             <div class="price_box">
-                                <span class="current_price">$39.00</span>
-                                <span class="old_price">$50.00</span>
+                                <span class="current_price">{{$product -> price_sale}}</span>
+                                <span class="old_price">{{$product -> price_nomal}}</span>
                             </div>
                             <div class="product_desc">
-                                <p>A t-shirt that comes in three colors (red, white and blue) and three sizes (small, medium, large) is a configurable product.  </p>
+                                <p>{!!$product -> description!!}</p>
                             </div>
                             <div class="product_variant">
                                 <div class="variant_quantity_btn d-flex">
@@ -128,15 +129,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="info" role="tabpanel" >
                                 <div class="product_info_content">
-                                    <p>Coupling a blended linen construction with tailored style, the River Island HR Jasper Blazer will imprint a touch of dapper charm into your after-dark wardrobe. <br> Our model wearing a size medium blazer, and usually takes a size medium/38L shirt. <br> He is 6’2 1/2” (189cm) tall with a 38” (96 cm) chest and a 31” (78 cm) waist.</p>
-                                    <ul>
-                                        <li>Length: 74cm</li>
-                                        <li>Regular fit</li>
-                                        <li>Notched lapels</li>
-                                        <li>Twin button front fastening</li>
-                                        <li>Front patch pockets; chest pocket</li>
-                                        <li> Internal pockets</li>
-                                    </ul>
+                                    <p>{!!$product -> content!!}</p>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="reviews" role="tabpanel" >

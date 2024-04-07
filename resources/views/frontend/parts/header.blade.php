@@ -14,9 +14,9 @@
                             <div class="main_menu d-none d-lg-block">
                                 <nav>
                                     <ul class="d-flex">
-                                        <li><a href="{{Asset('frontend/index')}}">Home</a> </li>
-                                        <li><a class="active" href="{{Asset('frontend/home')}}">shop</a></li>
-                                        <li><a href="{{Asset('frontend/product-details')}}">product</a></li>
+                                        <li><a href="{{Asset('frontend/home')}}">Home</a> </li>
+                                        <li><a href="{{Asset('frontend/shop')}}">Shop</a> </li>
+                                        <li><a href="{{Asset('frontend/product_details')}}">product</a></li>
                                         
                                         <li><a href="{{Asset('frontend/blog')}}">blog</a>
                                             <ul class="sub_menu">
