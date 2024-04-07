@@ -43,10 +43,9 @@
             method: 'GET',
             dataType:'JSON',
             success: function(res){
-                console.log(res)
-            //   if(res.success == true){
-            //     location.reload();
-            //   }
+                if(res.success == true){
+                    location.reload();
+                }
             }
         }
         )
