@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     public function index(){
-        $products = product::all();
-        return view('frontend.shop',[
-            'products' => $products
+        $products = product::select('name','material','price_nomal','price_sale','image') -> get();
+        return view('frontend.home',[
+            'products' => $products 
         ]);
     }
 }

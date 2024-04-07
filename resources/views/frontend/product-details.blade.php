@@ -49,16 +49,16 @@
                            </div>
                            <div class="product_zoom_main_img">
                                 <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="assets/img/product/big-product/product1.png" alt="">
+                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
                                 </div>
                                 <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="assets/img/product/big-product/product1.png" alt="">
+                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
                                 </div>
                                 <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="assets/img/product/big-product/product1.png" alt="">
+                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
                                 </div>
                                 <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="assets/img/product/big-product/product1.png" alt="">
+                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset('frontend/assets/img/product/big-product/product1.png')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -68,6 +68,9 @@
                     <div class="product_d_right">
                        <form action="#">
                             <h1>Edwin T-Shirt Logo Script Print in Navy</h1>
+                            <div class="product_desc">
+                                <p>Material: Glass and silver</p>
+                            </div>
                             <div class="price_box">
                                 <span class="current_price">$39.00</span>
                                 <span class="old_price">$50.00</span>

@@ -183,177 +183,53 @@
                               {"breakpoint":300, "settings": { "slidesToShow": 1 } }
                              ]
                         }'>
-                            <article class="col single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="product-details.html">
-                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product3.jpg')}}"
-                                                alt="consectetur">
-                                        </a>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li class="wishlist"><a href="#" data-tippy="Wishlist"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-heart icons"></i></a></li>
-
-                                                <li class="quick_view"><a data-toggle="modal" data-target="#modal_box"
-                                                        data-tippy="Quick View" href="#" data-tippy-inertia="true"
-                                                        data-tippy-delay="50" data-tippy-arrow="true"
-                                                        data-tippy-placement="left"><i
-                                                            class="icon-size-fullscreen icons"></i></a></li>
-                                                <li class="compare"><a data-tippy="Compare" href="#"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-refresh icons"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <figcaption class="product_content text-center">
-                                        
-                                        <h4 class="product_name"><a href="product-details.html">Basic White Simple
-                                                Sneaker</a></h4>
-                                        <div class="price_box">
-                                            <span class="current_price">$43.00</span>
-                                            <span class="old_price">$46.00</span>
-                                        </div>
-                                        <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
-                                                data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Add To Cart</a>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                            <article class="col single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="product-details.html">
-                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product4.jpg')}}"
-                                                alt="consectetur">
-                                        </a>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li class="wishlist"><a href="#" data-tippy="Wishlist"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-heart icons"></i></a></li>
-
-                                                <li class="quick_view"><a data-toggle="modal" data-target="#modal_box"
-                                                        data-tippy="Quick View" href="#" data-tippy-inertia="true"
-                                                        data-tippy-delay="50" data-tippy-arrow="true"
-                                                        data-tippy-placement="left"><i
-                                                            class="icon-size-fullscreen icons"></i></a></li>
-                                                <li class="compare"><a data-tippy="Compare" href="#"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-refresh icons"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <figcaption class="product_content text-center">
-                                        
-                                        <h4 class="product_name"><a href="product-details.html">Simple Rounded
-                                                Sunglasses</a></h4>
-                                                <div class="price_box">
-                                                    <span class="current_price">$42.00</span>
-                                                    <span class="old_price">$46.00</span>
-                                                </div>
-                                        <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
-                                                data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Add To Cart</a>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                            <article class="col single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="product-details.html">
-                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product1.jpg')}}"
-                                                alt="consectetur">
-                                        </a>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li class="wishlist"><a href="#" data-tippy="Wishlist"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-heart icons"></i></a></li>
-
-                                                <li class="quick_view"><a data-toggle="modal" data-target="#modal_box"
-                                                        data-tippy="Quick View" href="#" data-tippy-inertia="true"
-                                                        data-tippy-delay="50" data-tippy-arrow="true"
-                                                        data-tippy-placement="left"><i
-                                                            class="icon-size-fullscreen icons"></i></a></li>
-
-                                                <li class="compare"><a data-tippy="Compare" href="#"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-refresh icons"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <figcaption class="product_content text-center">
-                                     
-                                        <h4 class="product_name"><a href="product-details.html">Basic Joggin Shorts</a>
-                                        </h4>
-                                        <div class="price_box">
-                                            <span class="current_price">$26.00</span>
-                                            <span class="old_price">$62.00</span>
-                                        </div>
-                                        <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
-                                                data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Add To Cart</a>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
-                            <article class="col single_product">
-                                <figure>
-                                    <div class="product_thumb">
-                                        <a href="product-details.html">
-                                            <img class="primary_img" src="{{Asset('frontend/assets/img/product/product2.jpg')}}"
-                                                alt="consectetur">
-                                        </a>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li class="wishlist"><a href="#" data-tippy="Wishlist"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-heart icons"></i></a></li>
-
-                                                <li class="quick_view"><a data-toggle="modal" data-target="#modal_box"
-                                                        data-tippy="Quick View" href="#" data-tippy-inertia="true"
-                                                        data-tippy-delay="50" data-tippy-arrow="true"
-                                                        data-tippy-placement="left"><i
-                                                            class="icon-size-fullscreen icons"></i></a></li>
-
-                                                <li class="compare"><a data-tippy="Compare" href="#"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-refresh icons"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        
-                                    </div>
-                                    <figcaption class="product_content text-center">
-                                       
-                                        <h4 class="product_name"><a href="product-details.html">Make Thing Happen
-                                                T-Shirts</a></h4>
-                                        <div class="price_box">
-                                            <span class="text-black">$38.00</span>
-
-                                        </div>
-                                        <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
-                                                data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Add To Cart</a>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </article>
+    <!-- Product -->
+@foreach($products as $product)
+    <article class="col single_product">
+        <figure>
+            <div class="product_thumb">
+                <a href="/frontend/product-details/{{$product -> id}}">
+                    <img class="primary_img" src="{{Asset($product -> image)}}" alt="consectetur">
+                </a>
+                <div class="product_action">
+                    <ul>
+                        <li class="wishlist"><a href="#" data-tippy="Wishlist"
+                                data-tippy-inertia="true" data-tippy-delay="50"
+                                data-tippy-arrow="true" data-tippy-placement="left"><i
+                                    class="icon-heart icons"></i></a></li>
+                        <li class="quick_view"><a data-toggle="modal" data-target="#modal_box"
+                                data-tippy="Quick View" href="#" data-tippy-inertia="true"
+                                data-tippy-delay="50" data-tippy-arrow="true"
+                                data-tippy-placement="left"><i
+                                    class="icon-size-fullscreen icons"></i></a></li>
+                        <li class="compare"><a data-tippy="Compare" href="#"
+                                data-tippy-inertia="true" data-tippy-delay="50"
+                                data-tippy-arrow="true" data-tippy-placement="left"><i
+                                    class="icon-refresh icons"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <figcaption class="product_content text-center">
+                <h4 class="product_name"><a href="/frontend/product-details/{{$product -> id}}">{{$product -> name}}</a></h4>
+                <span>
+                    <p>{{$product -> material}}</p>
+                        </span>
+                <div class="price_box">
+                    <span class="current_price">{{$product -> price_sale}}</span>
+                    <span class="old_price">{{$product -> price_nomal}}</span>
+                </div>
+                <div class="add_to_cart">
+                    <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
+                        data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
+                        data-tippy-placement="top">Add To Cart
+                    </a>
+                </div>
+            </figcaption>
+        </figure>
+    </article>
+@endforeach
+    <!-- End Product -->
+                            
                         </div>
                     </div>
                 </div>
