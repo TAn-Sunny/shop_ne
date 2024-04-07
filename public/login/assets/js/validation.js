@@ -46,7 +46,7 @@ validation
                            return json.available;
                        });
             },
-            errorMessage: "this email has been taken."
+            errorMessage: "this email has been already taken."
         }
     ])
     .addField("#password", [

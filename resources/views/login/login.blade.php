@@ -4,7 +4,7 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    $mysqli = require __DIR__ . "/database.php";
+    $mysqli = require __DIR__ . "/login/database.php";
     
     $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             <?php endif; ?>
             
-            <form action="login.php" autocomplete="off" class="sign-in-form" 
+            <form action="login.login" autocomplete="off" class="sign-in-form" 
             method = "post" id = login>
               <div class="logo">
                 <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               </div>
             </form>
 
-            <form action="process-signup.php" autocomplete="off" class="sign-up-form" method = "post" id = "signup" novalidate>
+            <form action="login.process-signup" autocomplete="off" class="sign-up-form" method = "post" id = "signup" novalidate>
               <div class="logo">
                 <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
                 <h4>easyclass</h4>
