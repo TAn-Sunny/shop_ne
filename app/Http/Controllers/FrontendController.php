@@ -41,7 +41,7 @@ class FrontendController extends Controller
         }else{
             $cart = Session::get('/frontend/cart');
             if(Arr::exists($cart,$product_id)){
-                $cart[$product_id] = $cart[$product_id] + $product_quantity;
+                $cart[$product_id] += $product_quantity;
                 Session::put('/frontend/cart',$cart);
                 return redirect('/frontend/cart');
             }else{
@@ -62,7 +62,11 @@ class FrontendController extends Controller
     }
 
 
-    public function delete_cart(){
-        
+    public function delete_cart(Request $request){
+        $cart = Session::get('/frontend/cart');
+        $product_id = $request -> id;
+        unset($cart[$product_id]);
+        Session::put('/frontend/cart', $cart);
+        return redirect('/frontend/cart');
     }
 }

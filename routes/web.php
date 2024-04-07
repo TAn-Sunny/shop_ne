@@ -58,7 +58,9 @@ Route::get('/frontend/checkout', function () {
 Route::get('/frontend/shop', [FrontendController ::class,'shop']);
 Route::get('/frontend/home', [FrontendController ::class,'index']);
 
-Route::get('/login', 'LoginController@index');
+Route::get('/login', function () {
+    return view('login.login');
+});
 Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/signup', 'SignupController@index');

@@ -35,12 +35,11 @@
     <!--breadcrumbs area end-->
 
      <!--shopping cart area start -->
+    <form action="">
     <div class="shopping_cart_area">
         <div class="container">
             <form action="#">
                 <div class="cart_page_inner mb-60">
-                    
-                   
                     <div class="row">
                         <div class="col-12">
                             <div class="cart_page_tabel">
@@ -81,7 +80,7 @@
                                                 </td>
                                                 <td class="product_quantity">
                                                     <div class="cart_product_quantity">
-                                                        <input onKeyDown="return false" type="number" value="{{Session::get('/frontend/cart')[$product -> id]}}">
+                                                        <input onKeyDown="return false" name="product_id[{{$product -> id}}]" type="number" value="{{Session::get('/frontend/cart')[$product -> id]}}">
                                                     </div>
                                                 </td>
                                                 <td>
@@ -125,6 +124,7 @@
             </form>
         </div>
     </div>
+    </form>
      <!--shopping cart area end -->
 
 
