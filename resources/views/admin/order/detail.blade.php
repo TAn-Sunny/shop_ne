@@ -15,12 +15,12 @@
         </thead>
         <tbody>
             @php
-                total = 0;
+                $total = 0;
             @endphp
             @foreach ($products as $product)
             @php
                 $price = $product -> price_sale * Session::get('/frontend/cart')[$product -> id];
-                total += price;
+                $total += $price;
             @endphp
             <tr>
                 <td>{{$product -> id}}</td>

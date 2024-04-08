@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontendController;
 use App\Models\product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\orderController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,21 +19,27 @@ use App\Http\Controllers\Admin\orderController;
 |
 */
 
-//Admin
-Route::get('/admin', function () {
-    return view('admin.home');
+//Admin - phân quyền
+Route::middleware('auth')->group(function() {
+    Route::prefix('admin')->group(function() {
+        Route::get('/', function () { return view('admin.home'); });
+        Route::get('product/list', [productController::class, 'list_product']);
+        Route::get('order/list',[orderController::class, 'list_order']);
+        // chèn các đường dẫn mà cần chặn truy cập một cách bình thường tại đây, nhớ khi chèn vô thì xoá cái cũ nha, giữ lại 1 cái thôi.
+    });
 });
+
+
 //product
 Route::post('/admin/product/add', [productController::class, 'insert_product']);
 Route::get('/admin/product/create', [productController::class, 'add_product']);
-Route::get('/admin/product/list', [productController::class, 'list_product']);
 Route::get('/admin/product/delete',[productController::class, 'delete_product']);
 Route::get('/admin/product/edit/{id}', [productController::class, 'edit_product']);
 Route::post('/admin/product/edit/{id}', [productController::class, 'update_product']);
 
 
 //order
-Route::get('/admin/order/list',[orderController::class, 'list_order']);
+
 Route::get('/admin/order/detail/{{order_detail}}', [orderController::class, 'detail_order']);
 
 //upload
@@ -81,6 +88,9 @@ Route::get('/frontend/search', [FrontendController::class, 'getSearch']) -> name
 //login
 Route::get('/home', [FrontendController ::class,'index']);
 
+
+
+
 Route::get('/index', function () {
     return view('login.index');
 });
@@ -97,11 +107,11 @@ Route::get('/signup_after', function () {
 });
 
 
-Route::get('/login', 'App\Http\Controllers\LoginController@index');
+Route::get('/login', 'App\Http\Controllers\LoginController@index')->name('login');
 Route::post('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 Route::get('/signup', 'App\Http\Controllers\SignupController@index');
 Route::post('/signup', 'App\Http\Controllers\\LoginController@signup');
 Route::get('/laravel-coding/login/validate-email', 'App\Http\Controllers\EmailController@validateEmail');
 Route::post('/login/process-signup', 'App\Http\Controllers\SignUpController@signup')->name('login.process-signup');
-//frontend
+//frontend/login
