@@ -29,7 +29,7 @@
                             </div>
                             <div class="header_account">
                                 <ul class="d-flex">
-                                    <li class="header_search"><a href="#"><i class="icon-magnifier icons"></i></a></li>
+                                    <li class="header_search"><a><i class="icon-magnifier icons"></i></a></li>
                                     <li class="account_link"><a href="#"><i class="icon-user icons"></i></a>
                                         <ul class="dropdown_account_link">
                                             <li><a href="#">My Account</a></li>
@@ -51,8 +51,8 @@
             <div class="search_close">
                 <i class="ion-close-round"></i>
             </div>
-            <form class="border-bottom" action="#">
-                <input class="border-0" placeholder="Search products..." type="text">
+            <form class="border-bottom" action="{{route('search')}}" method="get">
+                <input class="border-0" placeholder="Search products..." type="text" name="key">
                 <button type="submit"><span class="icon-magnifier icons"></span></button>
             </form>
         </div>
