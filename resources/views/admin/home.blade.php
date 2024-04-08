@@ -19,7 +19,8 @@
                     </div>
                     <div class="admin-content-main-content">
                         <!--  Nội dung nằm ở đây -->
-                        <H1>PLAPLAPLA</H1>
+                        <h1>Chào mừng bạn đến với trang admin của BAZAAR!</h1>
+                        <!-- <h1 style="color: #333; font-size: 32px; font-weight: bold;">CHÀO MỪNG BẠN ĐẾN VỚI TRANG ADMIN CỦA BAZAAR!</h1> -->
                     </div>
                 </div>
             </div>
