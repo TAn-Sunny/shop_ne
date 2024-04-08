@@ -27,9 +27,9 @@ if (request()->isMethod('post')) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign in & Sign up Form</title>
-    <link rel="stylesheet" href="{{Asset('login/style.css')}}" />
+    <link rel="stylesheet" href="{{Asset('login_public/style.css')}}" />
      <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"  defer></script>
-    <script src = "{{Asset('login/validation.js')}}" defer></script>
+    <script src = "{{Asset('login_public/validation.js')}}" defer></script>
     
   </head>
   <body>
@@ -44,10 +44,10 @@ if (request()->isMethod('post')) {
                 </div>
             <?php endif; ?>
             
-            <form action="login.login" autocomplete="off" class="sign-in-form" 
+            <form action="/login" autocomplete="off" class="sign-in-form" 
             method = "post" id = login>
               <div class="logo">
-                <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
+                <img src="{{Asset('login_public/img/logo.png')}}" alt="easyclass" />
                 <h4>Testing</h4>
               </div>
 
@@ -93,11 +93,12 @@ if (request()->isMethod('post')) {
                   <a href="#">Get help</a> signing in
                 </p>
               </div>
+              @csrf
             </form>
 
-            <form action="login.process-signup" autocomplete="off" class="sign-up-form" method = "post" id = "signup" novalidate>
+            <form action="{{ route('login.process-signup') }}" autocomplete="off" class="sign-up-form" method = "post" id = "signup" novalidate>
               <div class="logo">
-                <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
+                <img src="{{Asset('login_public/img/logo.png')}}" alt="easyclass" />
                 <h4>easyclass</h4>
               </div>
 
@@ -172,14 +173,15 @@ if (request()->isMethod('post')) {
                   <a href="#">Privacy Policy</a>
                 </p>
               </div>
+              @csrf
             </form>
           </div>
 
           <div class="carousel">
             <div class="images-wrapper">
-              <img src="{{Asset('login/img/image1.png')}}" class="image img-1 show" alt="" />
-              <img src="{{Asset('login/img/image2.png')}}" class="image img-2" alt="" />
-              <img src="{{Asset('login/img/image3.png')}}" class="image img-3" alt="" />
+              <img src="{{Asset('login_public/img/image1.png')}}" class="image img-1 show" alt="" />
+              <img src="{{Asset('login_public/img/image2.png')}}" class="image img-2" alt="" />
+              <img src="{{Asset('login_public/img/image3.png')}}" class="image img-3" alt="" />
             </div>
 
             <div class="text-slider">
@@ -204,7 +206,7 @@ if (request()->isMethod('post')) {
 
     <!-- Javascript file -->
 
-    <script src="{{Asset('login/app.js')}}"></script>
+    <script src="{{Asset('login_public/app.js')}}"></script>
   
   </body>
 </html>

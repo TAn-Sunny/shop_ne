@@ -22,21 +22,17 @@ if (isset($_SESSION["users_id"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="{{Asset('login/style.css')}}" />
+    <link rel="stylesheet" href="{{Asset('login_public/style.css')}}" />
   </head>
   <body>
     <h1>Hello</h1>
 
-    <?php if (isset($users)): ?>
+    @if (Auth::check())
+    <p>Hello {{ Auth::user()->name }}</p>
+    <p><a href = "/logout">Log out</a></p>
+    @else
+    <p><a href = "/login_success">Log in</a> or <a href ="/signup_after">Sign up</a></p>
+    @endif
 
-        <p>Hello <?= htmlspecialchars($users["name"]) ?></p>
-
-        <p><a href = "login.logout">Log out</a></p>
-
-    <?php else: ?>
-
-        <p><a href = "login.login">Log in</a> or <a href ="login.signup">Sign up</a></p>
-
-    <?php endif; ?>
     </body>
 </html>
