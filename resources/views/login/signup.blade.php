@@ -1,32 +1,19 @@
 <?php
 
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+
 $is_invalid = false;
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if (request()->isMethod('post')) {
     
-    $mysqli = require __DIR__ . "/login/database";
+    $user = User::where('email', request('email'))->first();
     
-    $sql = sprintf("SELECT * FROM users
-                    WHERE email = '%s'",
-                   $mysqli->real_escape_string($_POST["email"]));
-    
-    $result = $mysqli->query($sql);
-    
-    $users = $result->fetch_assoc();
-    
-    if ($users) {
+    if ($user && Hash::check(request('password'), $user->password)) {
         
-        if (password_verify($_POST["password"], $users["password_hash"])) {
-            
-            session_start();
-            
-            session_regenerate_id();
-            
-            $_SESSION["users_id"] = $users["id"];
-            
-            header("Location: index.php");
-            exit;
-        }
+        session(['user_id' => $user->id]);
+        
+        return redirect('index');
     }
     
     $is_invalid = true;
@@ -40,9 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign in & Sign up Form</title>
-    <link rel="stylesheet" href="{{Asset('login/style.css')}}" />
+    <link rel="stylesheet" href="{{Asset('login_public/style.css')}}" />
      <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"  defer></script>
-    <script src = "{{Asset('login/validation.js')}}" defer></script>
+    <script src = "{{Asset('login_public/validation.js')}}" defer></script>
   </head>
   <body>
     <main>
@@ -53,10 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <em>Invalid login</em>
             <?php endif; ?>
             
-            <form action="login.login" autocomplete="off" class="sign-up-form" 
+            <form action="/login" autocomplete="off" class="sign-up-form" 
             method = "post" id = login>
               <div class="logo">
-                <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
+                <img src="{{Asset('login_public/img/logo.png')}}" alt="easyclass" />
                 <h4>easyclass</h4>
               </div>
 
@@ -102,11 +89,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                   <a href="#">Get help</a> signing in
                 </p>
               </div>
+              @csrf
             </form>
 
-            <form action="login.process-signup" autocomplete="off" class="sign-in-form" method = "post" id = "signup" novalidate>
+            <form action="{{ route('login.process-signup') }}" autocomplete="off" class="sign-in-form" method = "post" id = "signup" novalidate>
               <div class="logo">
-                <img src="{{Asset('login/img/logo.png')}}" alt="easyclass" />
+                <img src="{{Asset('login_public/img/logo.png')}}" alt="easyclass" />
                 <h4>easyclass</h4>
               </div>
 
@@ -181,14 +169,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                   <a href="#">Privacy Policy</a>
                 </p>
               </div>
+              @csrf
             </form>
           </div>
 
           <div class="carousel">
             <div class="images-wrapper">
-              <img src="{{Asset('login/img/image1.png')}}" class="image img-1 show" alt="" />
-              <img src="{{Asset('login/img/image2.png')}}" class="image img-2" alt="" />
-              <img src="{{Asset('login/img/image3.png')}}" class="image img-3" alt="" />
+              <img src="{{Asset('login_public/img/image1.png')}}" class="image img-1 show" alt="" />
+              <img src="{{Asset('login_public/img/image2.png')}}" class="image img-2" alt="" />
+              <img src="{{Asset('login_public/img/image3.png')}}" class="image img-3" alt="" />
             </div>
 
             <div class="text-slider">
@@ -213,7 +202,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <!-- Javascript file -->
 
-    <script src="{{Asset('login/app.js')}}"></script>
+    <script src="{{Asset('login_public/app.js')}}"></script>
   
   </body>
 </html>

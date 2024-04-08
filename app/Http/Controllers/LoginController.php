@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login');
+        return view('login.login');
     }
 
     public function login(Request $request)
@@ -18,18 +18,19 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            // Lưu thông tin người dùng vào session
+            session(['users_id' => Auth::user()->id]);
+            return redirect('/home');
         }
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
-
+    
     public function logout()
     {
         Auth::logout();
-
-        return redirect('login');
+        return redirect('/login');
     }
 }

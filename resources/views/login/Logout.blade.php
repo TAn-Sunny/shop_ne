@@ -1,8 +1,15 @@
 <?php
 
-session_start();
+namespace App\Http\Controllers;
 
-session_destroy();
+use Illuminate\Support\Facades\Auth;
 
-header("Location: index.php");
-exit;
+class LogoutController extends Controller
+{
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect('/index');
+    }
+}
