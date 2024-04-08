@@ -10,7 +10,7 @@ class orderController extends Controller
     public function list_order(){
         $orders = order::all();
         return view('admin.order.list',[
-            'order' => $orders
+            'orders' => $orders
         ]);
     }
     public function detail_order(Request $request){

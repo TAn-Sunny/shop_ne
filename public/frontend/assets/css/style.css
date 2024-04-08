@@ -6863,7 +6863,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .grand_totall_area {
   background: #eef2ec;
-  padding: 37px 42px 32px;
+  padding: 10px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .grand_totall_area {
@@ -6877,7 +6877,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 @media only screen and (max-width: 767px) {
   .grand_totall_area {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -6893,10 +6893,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-top: 12px;
 }
 
-.grand_totall_inner {
-  padding-bottom: 27px;
-  margin-bottom: 30px;
-}
 @media only screen and (max-width: 575px) {
   .grand_totall_inner {
     padding-bottom: 20px;
