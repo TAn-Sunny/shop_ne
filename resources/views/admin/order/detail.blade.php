@@ -15,19 +15,19 @@
         </thead>
         <tbody>
             @php
-                total = 0;
+                $total = 0;
             @endphp
             @foreach ($products as $product)
             @php
-                $price = $product -> price_sale * Session::get('/frontend/cart')[$product -> id];
-                total += price;
+                $price = $product -> price_sale * $order_detail[$product -> id];
+                $total += $price;
             @endphp
             <tr>
                 <td>{{$product -> id}}</td>
-                <td><img style="width: 70px;" src="{{Asset('backend/Asset/image/product/product1.jpg')}}" alt="" ></td>
+                <td><img style="width: 70px;" src="{{Asset($product -> image)}}" alt="" ></td>
                 <td>{{$product -> name}}</td>
                 <td>{{number_format($product -> price_sale)}}</td>
-                <td>{{order_detail[$product -> id]}}</td>
+                <td>{{$order_detail[$product -> id]}}</td>
                 <td>{{number_format($price)}}</td>
                 <td>
                     <a class="delete-class" href="">Xóa</a>
@@ -37,7 +37,7 @@
 
             <tr>
                 <td style="font-weight: 700;" colspan="5">Tổng cộng</td>
-                <td style="font-weight: 700;">238.000</td>
+                <td style="font-weight: 700;">{{number_format($total)}}</td>
             </tr>
         </tbody>
     </table>
