@@ -70,8 +70,8 @@
                                     </li>
                                 </ul>
                             </div>
-                           
-                           
+
+
                         </div>
                     </aside>
                     <!--sidebar widget end-->
@@ -94,13 +94,13 @@
                             <p>The collections basic items <br> essential for all girls</p>
                         </div>
                     </div>
-                    
+
                     <!--shop toolbar start-->
                     <div class="shop_toolbar_wrapper d-flex justify-content-between align-items-center">
                         <div class="page_amount">
                             <p><span>1.260</span> Products Found</p>
                         </div>
-                        
+
                         <div class="toolbar_btn_wrapper d-flex align-items-center">
                             <div class="view_btn">
                                 <a class="view" href="#">VIEW</a>
@@ -158,13 +158,13 @@
                                             </a>
                                         </div>
                                     </figcaption>
-                                </figure>
+                                </figure> 
                         </article>
                     </div>
                      @endforeach
                 </div>
-                   
-                   
+
+
                     <div class="pagination_style pagination justify-content-center">
                         <ul class="d-flex">
                             <li><a href="#"> << </a></li>
@@ -177,7 +177,7 @@
                         </div>
                         </ul>
                     </div>
-                    
+
             </div>
         </div>
     </div>
@@ -191,8 +191,8 @@
     @include('frontend.parts.footer')
     <!--footer area end-->
 
-   
-    
+
+
 
 <!-- JS
 ============================================ -->

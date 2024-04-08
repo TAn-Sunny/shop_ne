@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\FrontendController;
 use App\Models\product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\orderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,11 +31,9 @@ Route::get('/admin/product/edit/{id}', [productController::class, 'edit_product'
 Route::post('/admin/product/edit/{id}', [productController::class, 'update_product']);
 
 
-
-Route::get('/admin/order_list', function () {
-    return view('admin.order_list');
-});
-Route::get('/admin/order_detail', function () {
+//order
+Route::get('/admin/order/list',[orderController::class, 'list_order']);
+Route::get('/admin/order/detail', function () {
     return view('admin.order_detail');
 });
 
@@ -61,6 +60,11 @@ Route::get('/frontend/home', [FrontendController ::class,'index']);
 Route::get('/login', function () {
     return view('login.login');
 });
+
+Route::get('/order/confirm', function () {
+    return view('order.confirm');
+});
+
 Route::post('/login', 'LoginController@login');
 Route::get('/logout', 'LoginController@logout');
 Route::get('/signup', 'SignupController@index');
@@ -72,3 +76,5 @@ Route::get('/laravel-coding/login/validate-email', 'App\Http\Controllers\EmailCo
 Route::post('/frontend/cart/add',[FrontendController::class,'add_cart']);
 Route::get('/frontend/cart', [FrontendController::class,'show_cart']);
 Route::get('/frontend/cart/delete/{id}', [FrontendController::class,'delete_cart']);
+Route::post('/frontend/checkout/send', [FrontendController::class, 'send_cart']);
+

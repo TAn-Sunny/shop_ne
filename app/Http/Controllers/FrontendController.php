@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\product;
+use App\Models\order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
@@ -12,14 +14,14 @@ class FrontendController extends Controller
     public function index(){
         $products = product::select('id','name','material','price_nomal','price_sale','image') -> get();
         return view('frontend.home',[
-            'products' => $products 
+            'products' => $products
         ]);
     }
 
     public function shop(){
         $products = product::select('id','name','material','price_nomal','price_sale','image') -> get();
         return view('frontend.shop',[
-            'products' => $products 
+            'products' => $products
         ]);
     }
 
@@ -68,5 +70,21 @@ class FrontendController extends Controller
         unset($cart[$product_id]);
         Session::put('/frontend/cart', $cart);
         return redirect('/frontend/cart');
+    }
+    public function send_cart(Request $request){
+        $token = Str::random(12);
+        $order = new order;
+        $order -> name = $request -> input('name');
+        $order -> phone = $request -> input('phone');
+        $order -> email = $request -> input('email');
+        $order -> city = $request -> input('city');
+        $order -> address = $request -> input('address');
+        $order -> note = $request -> input('note');
+        $order_detail = json_encode($request -> input('product_id'));
+        $order -> order_detail = $order_detail;
+        $order -> token = $request -> $token;
+        $order -> save();
+        return redirect('/order/confirm');
+
     }
 }

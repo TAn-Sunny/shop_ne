@@ -8,7 +8,7 @@
 <body>
 
     <!--offcanvas menu area start-->
-    
+
     <!--mini cart-->
     @include('frontend.parts.minicart')
     <!--mini cart end-->
@@ -54,11 +54,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @php 
+                                        @php
                                             $total = 0;
                                         @endphp
                                         @foreach($products as $product)
-                                            @php 
+                                            @php
                                                 $price = $product -> price_sale * Session::get('/frontend/cart')[$product -> id];
                                                 $total += $price;
                                             @endphp
@@ -98,17 +98,17 @@
                                     </tbody>
                                 </table>
                             </div>
-                           
+
                          </div>
                      </div>
-                 </div>
+                 </div> 
                  <!--coupon code area start-->
                 <div class="cart_page_bottom">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-sm-8">
                             <div class="grand_totall_area">
                                <div class="grand_totall_inner border-bottom">
-                                   
+
                                    <div class="cart_grandtotal d-flex justify-content-between">
                                        <p> Total</p>
                                        <span>${{$total}}</span>
@@ -116,7 +116,7 @@
                                </div>
                                <div class="proceed_checkout_btn">
                                    <a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a>
-                               
+
                         </div>
                     </div>
                 </div>

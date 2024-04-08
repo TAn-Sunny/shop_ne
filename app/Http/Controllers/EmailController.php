@@ -15,5 +15,4 @@ class EmailController extends Controller
         return response()->json(['available' => is_null($users)]);
     }
 
-
 }
