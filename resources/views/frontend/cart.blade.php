@@ -115,8 +115,7 @@
                                    </div>
                                </div>
                                <div class="proceed_checkout_btn">
-                                   <a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a>
-
+                                   <a class="btn btn-primary" href="/frontend/checkout">Proceed to Checkout</a>
                         </div>
                     </div>
                 </div>

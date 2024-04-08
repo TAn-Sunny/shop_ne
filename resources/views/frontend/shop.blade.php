@@ -98,7 +98,7 @@
                     <!--shop toolbar start-->
                     <div class="shop_toolbar_wrapper d-flex justify-content-between align-items-center">
                         <div class="page_amount">
-                            <p><span>1.260</span> Products Found</p>
+                            <p> Products </p>
                         </div>
 
                         <div class="toolbar_btn_wrapper d-flex align-items-center">

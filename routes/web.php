@@ -79,9 +79,7 @@ Route::post('/frontend/checkout/send', [FrontendController::class, 'send_cart'])
 //search
 Route::get('/frontend/search', [FrontendController::class, 'getSearch']) -> name('search');
 //login
-Route::get('/home', function () {
-    return view('frontend.home');
-});
+Route::get('/home', [FrontendController ::class,'index']);
 
 Route::get('/index', function () {
     return view('login.index');
@@ -107,6 +105,3 @@ Route::post('/signup', 'App\Http\Controllers\\LoginController@signup');
 Route::get('/laravel-coding/login/validate-email', 'App\Http\Controllers\EmailController@validateEmail');
 Route::post('/login/process-signup', 'App\Http\Controllers\SignUpController@signup')->name('login.process-signup');
 //frontend
-Route::get('/', function () {
-    return view('frontend.home');
-});

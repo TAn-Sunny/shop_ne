@@ -17,9 +17,9 @@
             @php
                 total = 0;
             @endphp
-            @foreach ($product as $product)
+            @foreach ($products as $product)
             @php
-                $price = $product -> price_sale * $order_detail[$product -> id];
+                $price = $product -> price_sale * Session::get('/frontend/cart')[$product -> id];
                 total += price;
             @endphp
             <tr>
