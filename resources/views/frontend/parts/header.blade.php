@@ -29,11 +29,15 @@
                             </div>
                             <div class="header_account">
                                 <ul class="d-flex">
-                                    <li class="header_search"><a><i class="icon-magnifier icons"></i></a></li>
+                                    <li class="header_search"><a href="#"><i class="icon-magnifier icons"></i></a></li>
                                     <li class="account_link"><a href="#"><i class="icon-user icons"></i></a>
                                         <ul class="dropdown_account_link">
                                             <li><a href="#">My Account</a></li>
-                                            <li><a href="#">Login</a></li>
+                                            @if (Auth::check())
+                                                <li><a href="/logout">Logout</a></li>
+                                            @else
+                                                <li><a href="/login">Login</a></li>
+                                            @endif
                                             <li><a href="#">Contact</a></li>
                                         </ul>
                                     </li>
