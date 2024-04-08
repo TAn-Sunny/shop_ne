@@ -18,7 +18,7 @@
     <div class="order-confirm p-to-top">
         <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         <div class="row-flex" style="display: flex; align-items: center; margin-bottom: 10px;">
-            <p>Xác nhận đơn hàng: <span style="font-weight: bold">Pạch Phương Pình</span></p>
+            <p> <span style="font-weight: bold">Xin chân thành cảm ơn quý khách đã mua hàng!</span></p>
         </div>
         <div class="row-flex" style="display: flex; align-items: center; margin-bottom: 10px;">
             <p>Đơn hàng của bạn đã được gửi <span style="font-weight: bold">thành công</span></p>
