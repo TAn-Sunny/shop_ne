@@ -11,7 +11,7 @@ class productController extends Controller
 {
     public function add_product(){
         return view('admin.product.add',[
-            'title' => 'Thêm Sản Phẩm'
+            'title' => 'Thêm Sản Phẩm' 
         ]);
     }
     public function insert_product(Request $request){
@@ -31,7 +31,6 @@ class productController extends Controller
     public function list_product(){
         $product = DB::table('products') -> paginate(10);
         // $product = product::all();
-        dd($product);
         return view('admin.product.list',[
             'title' => 'Danh sách sản phẩm',
             'products' => $product
