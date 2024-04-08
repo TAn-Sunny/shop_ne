@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
@@ -86,5 +87,10 @@ class FrontendController extends Controller
         $order -> save();
         return redirect('/order/confirm');
 
+    }
+
+    public function getSearch(Request $request){
+       $product = product::where('name','like','%'.$request->key.'%') -> get();
+       return view('frontend.search',compact('product'));
     }
 }

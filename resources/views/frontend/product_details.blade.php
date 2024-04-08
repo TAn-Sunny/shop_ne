@@ -37,65 +37,60 @@
     <!--product details start-->
     <section class="product_details mb-135">
         <form action="/frontend/cart/add" method="post">
-            
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="product_zoom_gallery">
-                       <div class="zoom_gallery_inner d-flex">
-                           <div class="zoom_tab_img">
-                               @php 
-                                    $product_images = explode('*', $product -> images);
-                               @endphp
-                                @foreach ($product_images as $product_image)
-                                <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset($product_image)}}" alt="tab-thumb"></a>
-                                @endforeach
-                           </div>
-                           <div class="product_zoom_main_img">
-                                <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product -> image)}}" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product_zoom_gallery">
+                        <div class="zoom_gallery_inner d-flex">
+                            <div class="zoom_tab_img">
+                                @php 
+                                        $product_images = explode('*', $product -> images);
+                                @endphp
+                                    @foreach ($product_images as $product_image)
+                                    <a class="zoom_tabimg_list" href="javascript:void(0)"><img src="{{Asset($product_image)}}" alt="tab-thumb"></a>
+                                    @endforeach
+                            </div>
+                            <div class="product_zoom_main_img">
+                                    <div class="product_zoom_thumb">
+                                        <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product -> image)}}" alt="">
+                                    </div>
+                                    <div class="product_zoom_thumb">
+                                        <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product_image)}}" alt="">
+                                    </div>
+                                    <div class="product_zoom_thumb">
+                                        <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product_image)}}" alt="">
+                                    </div>
                                 </div>
-                                <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product_image)}}" alt="">
-                                </div>
-                                <div class="product_zoom_thumb">
-                                    <img data-image="assets/img/product/big-product/product1.png" src="{{Asset($product_image)}}" alt="">
-                                </div>
-                                
-                                
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="product_d_right">
-                            <h1>{{$product -> name}}</h1>
-                            <div class="product_desc">
-                                <p>{{$product -> material}}</p>
-                            </div>
-                            <div class="price_box">
-                                <span class="current_price">{{$product -> price_sale}}</span>
-                                <span class="old_price">{{$product -> price_nomal}}</span>
-                            </div>
-                            <div class="product_desc">
-                                <p>{!!$product -> description!!}</p>
-                            </div>
-                            <div class="product_variant">
-                                <div class="variant_quantity_btn d-flex">
-                                    <div class="pro-qty border">
-                                        <input onkeydown="return false" type="tex" value="1" name="product_quantity">
-                                        <input type="hidden" value="{{$product -> id}}"  name="product_id">
-                                    </div>
-                                    <button class="button btn btn-primary" type="submit"><i class="ion-android-add"></i> Add To Cart</button>
-                                    <a class="wishlist" href=""><i class="ion-ios-heart"></i></a>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product_d_right">
+                                <h1>{{$product -> name}}</h1>
+                                <div class="product_desc">
+                                    <p>{{$product -> material}}</p>
                                 </div>
-                            </div>
-                        
+                                <div class="price_box">
+                                    <span class="current_price">{{$product -> price_sale}}</span>
+                                    <span class="old_price">{{$product -> price_nomal}}</span>
+                                </div>
+                                <div class="product_desc">
+                                    <p>{!!$product -> description!!}</p>
+                                </div>
+                                <div class="product_variant">
+                                    <div class="variant_quantity_btn d-flex">
+                                        <div class="pro-qty border">
+                                            <input onkeydown="return false" type="number" value="1" name="product_quantity">
+                                            <input type="hidden" value="{{$product -> id}}"  name="product_id">
+                                        </div>
+                                        <button class="button btn btn-primary" type="submit"></i>Add To Cart</button>
+                                    </div>
+                                </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         @csrf
         </form>
     </section>
@@ -113,7 +108,7 @@
                                     <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Product Description</a>
                                 </li>
                                 <li>
-                                   <a data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews          </a>
+                                   <a data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a>
                                 </li>
                                  <li>
                                    <a data-toggle="tab" href="#tags" role="tab" aria-controls="tags" aria-selected="false">Tags </a>

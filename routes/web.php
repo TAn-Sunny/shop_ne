@@ -76,3 +76,5 @@ Route::get('/frontend/cart', [FrontendController::class,'show_cart']);
 Route::get('/frontend/cart/delete/{id}', [FrontendController::class,'delete_cart']);
 Route::post('/frontend/checkout/send', [FrontendController::class, 'send_cart']);
 
+//search
+Route::get('/frontend/search', [FrontendController::class, 'getSearch']) -> name('search');
