@@ -24,7 +24,7 @@
             <p>Đơn hàng của bạn đã được gửi <span style="font-weight: bold">thành công</span></p>
         </div>
         <br>
-        <button class="main-btn" style="padding: 10px 20px; background-color: #555; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Tiếp tục mua hàng</button>
+        <a class="main-btn" style="padding: 10px 20px; background-color: #555; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Tiếp tục mua hàng</a>
     </div>
     </form>
 

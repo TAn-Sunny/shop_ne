@@ -17,67 +17,47 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Bach Phuong Binh</td>
-                <td>077 777 7777</td>
-                <td>bpb2004@gmail.com</td>
-                <td>2A, P. Tân Quy, Q.7, TPHCM</td>
-                <td>Giao nhanh</td>
-                <td>
-                    <a class="edit-class" href="/admin/order/detail">Chi tiết</a>
-                </td>
-                <td>
-                    26/03/2024
-                </td>
-                <td>
-                    <a class="confirm-order" href="">Đã xác nhận</a>
-                </td>
-                <td>
+            @foreach($order as $order)
+                <tr>
+                    <td>{{$order -> id}}</td>
+                    <td>{{$order -> name}}</td>
+                    <td>{{$order -> phone}}</td>
+                    <td>{{$order -> email}}</td>
+                    <td>{{$order -> address}}, {{$order -> city}}</td>
+                    <td>{{$order -> note }}</td>
+                    <td>
+                        <a class="edit-class" href="/admin/order/detail/{{$order -> order_detail}}">Chi tiết</a>
+                    </td>
+                    <td>{{$order -> created_at}}</td>
+                    <td>
+                        <a class="non_confirm-order" href="">Đã xác nhận</a>
+                    </td>
+                    <td>
                     <a class="delete-class" href="">Xóa</a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Tang Minh Thien An</td>
-                <td>077 777 7777</td>
-                <td>tmta2004@gmail.com</td>
-                <td>Q.9, TPHCM</td>
-                <td>Giao chậm</td>
-                <td>
-                    <a class="edit-class" href="/admin/order/detail">Chi tiết</a>
-                </td>
-                <td>
-                    26/03/2024
-                </td>
-                <td>
-                    <a class="not-confirm-order" href="">Chưa xác nhận</a>
-                </td>
-                <td>
-                    <a class="delete-class" href="">Xóa</a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Pham Xuan Truong</td>
-                <td>077 777 7777</td>
-                <td>pxt2004@gmail.com</td>
-                <td>Dak Lak</td>
-                <td>Giao Nhanh</td>
-                <td>
-                    <a class="edit-class" href="/admin/order/detail">Chi tiết</a>
-                </td>
-                <td>
-                    26/03/2024
-                </td>
-                <td>
-                    <a class="not-confirm-order" href="/admin/order_detail">Chưa xác nhận</a>
-                </td>
-                <td>
-                    <a class="delete-class" href="">Xóa</a>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
+@endsection
+@section('footer')
+<script>
+    function removeRow(product_id,url){
+      if(confirm('Bạn có chắn chắn muốn xóa sản phẩm này không?')){
+            $.ajax({
+            url: url,
+            data: {product_id},
+            method: 'GET',
+            dataType:'JSON',
+            success: function(res){
+                if(res.success == true){
+                    location.reload();
+                }
+            }
+        }
+        )
+      }
+    }
+</script>
 @endsection
