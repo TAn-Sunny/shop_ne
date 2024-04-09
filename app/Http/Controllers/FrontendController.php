@@ -10,6 +10,15 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
+use App\Notifications\EmailNotification;
+use Illuminate\Support\Facades\Notification;
+
+
+// namespace App\Mail;
+// use App\Mail\TestMail;
+
 class FrontendController extends Controller
 {
     public function index(){
@@ -85,6 +94,11 @@ class FrontendController extends Controller
         $order -> order_detail = $order_detail;
         $order -> token = $request -> $token;
         $order -> save();
+        Session::flush('card');
+        $mail_info = $order -> email;
+        $name_info = $order -> name;
+        $Mail = Mail::to($mail_info) -> send(new TestMail($name_info));
+        Notification::send($order, new EmailNotification($order) );
         return redirect('/order/confirm');
 
     }

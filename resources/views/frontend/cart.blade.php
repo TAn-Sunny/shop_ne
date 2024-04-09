@@ -98,7 +98,7 @@
                                 </table>
                             </div>
                          </div>
-                    </div> 
+                    </div>
                 </div>
                  <!--coupon code area start-->
                 <div class="cart_page_bottom">
@@ -114,16 +114,16 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             <!-- checkout -->
-            <div class="checkout_section" id="accordion">
+            <div class="checkout_section" id="accordion" style="margin-top: 50px; >
                 <div class="container">
                     <div class="checkout_form">
                         <div class="row">
                             <div class="col-lg-7 col-md-6">
-                                
+
                                     <!-- <input type="hidden" name="_token" value='{{csrf_token()}}'> -->
-                                    <h3>Thông tin giao hàng</h3>
+                                    <h3 style="font-size: 25px;"><strong>Thông tin giao hàng</strong></h3>
                                     <div class="checkout_form_input">
                                         <label>Họ và tên <span>*</span></label>
                                         <input name="name" type="text">
@@ -206,7 +206,7 @@
                                         </select>
                                     </div>
                                     <div class="checkout_form_input">
-                                        <label> Địa chỉ cụ thể (số nhà/đường, phường/xã, quận/huyện,...)  <span>*</span></label>
+                                        <label> Địa chỉ cụ thể (xã/phường, quận/huyện,...)  <span>*</span></label>
                                         <input name="address" type="text">
                                     </div>
                                     <div class="checkout_form_input">
@@ -217,7 +217,7 @@
                                     <button class="btn btn-primary">Gửi đơn hàng</button>
                                     <!-- </div> -->
                                     @csrf
-                                
+
                             </div>
                         </div>
                     </div>
@@ -228,7 +228,7 @@
         </div>
     </div>
 
-   
+
      <!--newsletter section start-->
      @include('frontend.parts.newsletter')
     <!--newsletter section end-->
