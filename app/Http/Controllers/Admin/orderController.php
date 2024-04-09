@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Models\order;
 use Illuminate\Http\Request;
 use App\Models\product;
+
 class orderController extends Controller
 {
     public function list_order(){
@@ -20,6 +21,12 @@ class orderController extends Controller
         return view('admin.order.detail',[
             'products' => $products,
             'order_detail'  => $order_detail
+        ]);
+    }
+    public function delete_order(Request $request){
+        order::find($request -> product_id) -> delete();
+        return response() -> json([
+            'success' => true
         ]);
     }
 

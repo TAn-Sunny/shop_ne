@@ -44,7 +44,7 @@
 @section('footer')
 <script>
     function removeRow(product_id,url){
-      if(confirm('Bạn có chắn chắn muốn xóa sản phẩm này không?')){
+      if(confirm('Bạn có chắn chắn muốn xóa order này không?')){
             $.ajax({
             url: url,
             data: {product_id},

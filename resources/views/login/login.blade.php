@@ -37,13 +37,15 @@ if (request()->isMethod('post')) {
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
-            <?php if ($is_invalid): ?>
-              <div class="alert">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                    Email or password is incorrect. Please try again.
+                  @if ($errors->any())
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
                 </div>
-            <?php endif; ?>
-            
+            @endif
+      
             <form action="/login" autocomplete="off" class="sign-in-form" 
             method = "post" id = login>
               <div class="logo">
