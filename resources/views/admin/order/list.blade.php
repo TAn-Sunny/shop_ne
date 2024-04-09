@@ -12,7 +12,7 @@
                 <th>Ghi Chú</th>
                 <th>Chi tiết</th>
                 <th>Ngày</th>
-                <th>Trạng thái</th>
+                <!-- <th>Trạng thái</th> -->
                 <th>Tùy biến</th>
             </tr>
         </thead>
@@ -29,9 +29,9 @@
                         <a class="edit-class" href="/admin/order/detail/{{$order -> order_detail}}">Chi tiết</a>
                     </td>
                     <td>{{$order -> created_at}}</td>
-                    <td>
+                    <!-- <td>
                         <a class="non_confirm-order" href="">Đã xác nhận</a>
-                    </td>
+                    </td> -->
                     <td>
                     <a onclick="removeRow(product_id={{$order -> id}},url ='/admin/product/delete')" class="delete-class" href="#">Xóa</a>
                     </td>
