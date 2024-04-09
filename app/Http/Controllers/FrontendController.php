@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
 use App\Notifications\EmailNotification;
 use Illuminate\Support\Facades\Notification;
-use Illuminate\Support\Facades\Auth;
-use App\Models\UserCart;
+
 
 // namespace App\Mail;
 // use App\Mail\TestMail;
@@ -42,44 +41,38 @@ class FrontendController extends Controller
             'product' => $product
         ]);
     }
-    
+
     public function add_cart(Request $request){
         $product_id = $request -> product_id;
-        $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
-    
-        // Tìm giỏ hàng của người dùng hiện tại
-        $cart = UserCart::where('user_id', $user_id)->where('product_id', $product_id)->first();
-    
-        if (!$cart) {
-            // Nếu không, tạo một giỏ hàng mới
-            $cart = new UserCart;
-            $cart->user_id = $user_id;
-            $cart->product_id = $product_id;
+        $product_quantity = $request -> product_quantity;
+        if(is_null(Session::get('/frontend/cart'))){
+            Session::put('/frontend/cart', [
+                $product_id => $product_quantity
+            ]);
+            return redirect('/frontend/cart');
+        }else{
+            $cart = Session::get('/frontend/cart');
+            if(Arr::exists($cart,$product_id)){
+                $cart[$product_id] += $product_quantity;
+                Session::put('/frontend/cart',$cart);
+                return redirect('/frontend/cart');
+            }else{
+                $cart[$product_id] = $product_quantity;
+                Session::put('/frontend/cart',$cart);
+                return redirect('/frontend/cart');
+            }
         }
-    
-        $cart->save();
-    
-        return redirect('/frontend/cart');
     }
-    
+
     public function show_cart(){
-        $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
-    
-        // Lấy tất cả các mục giỏ hàng của người dùng hiện tại
-        $cart_items = UserCart::where('user_id', $user_id)->get();
-    
-        // Lấy thông tin sản phẩm cho mỗi mục giỏ hàng
-        $products = [];
-        foreach ($cart_items as $item) {
-            $product = Product::find($item->product_id);
-            $products[] = $product;
-        }
-    
+        $cart = Session::get('/frontend/cart');
+        $product_id = array_keys($cart);
+        $products = product::whereIn('id', $product_id ) -> get();
         return view('/frontend/cart',[
             'products' => $products
         ]);
     }
-    
+
 
     public function delete_cart(Request $request){
         $cart = Session::get('/frontend/cart');
