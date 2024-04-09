@@ -207,18 +207,7 @@
                     </article>
                 </div>
             </div>
-            <div class="pagination_style pagination blog_pagination justify-content-center">
-                <ul class="d-flex">
-                    <li><a  class="current" href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">...</a></li>
-                    <li><a href="#">15</a></li>
-                    <li><a href="#">16</a></li>
-                    <li><a href="#">>></a></li>
-                </ul>
-            </div>
+            
         </div>
     </div>
     <!--blog page section end-->
@@ -227,7 +216,7 @@
     @include('frontend.parts.newsletter')
     <!--newsletter section end-->
 
-    @include('frontend.parts.newsletter')
+    @include('frontend.parts.footer')
     <!--footer area end-->
 
 

@@ -25,23 +25,23 @@ Route::middleware('auth')->group(function() {
         Route::get('/', function () { return view('admin.home'); });
         Route::get('product/list', [productController::class, 'list_product']);
         Route::get('order/list',[orderController::class, 'list_order']);
+        Route::get('order/detail/{order_detail}', [orderController::class, 'detail_order']);
+        Route::get('order/delete',[orderController::class, 'delete_order']);
+        Route::get('product/create', [productController::class, 'add_product']);
+        Route::get('product/delete',[productController::class, 'delete_product']);
+        Route::get('/adminproduct/edit/{id}', [productController::class, 'edit_product']);
         // chèn các đường dẫn mà cần chặn truy cập một cách bình thường tại đây, nhớ khi chèn vô thì xoá cái cũ nha, giữ lại 1 cái thôi.
     });
 });
 
 
 //product
-Route::post('/admin/product/add', [productController::class, 'insert_product']);
-Route::get('/admin/product/create', [productController::class, 'add_product']);
-Route::get('/admin/product/delete',[productController::class, 'delete_product']);
-Route::get('/admin/product/edit/{id}', [productController::class, 'edit_product']);
-Route::post('/admin/product/edit/{id}', [productController::class, 'update_product']);
 
+Route::post('/admin/product/edit/{id}', [productController::class, 'update_product']);
+Route::post('/admin/product/add', [productController::class, 'insert_product']);
 
 //order
-Route::get('/admin/order/list',[orderController::class, 'list_order']);
-Route::get('/admin/order/detail/{order_detail}', [orderController::class, 'detail_order']);
-Route::get('/admin/order/delete',[orderController::class, 'delete_order']);
+
 //upload
 Route::post('/upload', [UploadController::class,'uploadImage']);
 Route::post('/uploads', [UploadController::class,'uploadImages']);
