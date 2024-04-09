@@ -10,10 +10,10 @@
                 <th>Email</th>
                 <th>Địa chỉ</th>
                 <th>Ghi Chú</th>
-                <!-- <th>Chi tiết</th> -->
+                <th>Chi tiết</th>
                 <th>Ngày</th>
-                <!-- <th>Trạng thái</th>
-                <th>Tùy biến</th> -->
+                <th>Trạng thái</th>
+                <th>Tùy biến</th>
             </tr>
         </thead>
         <tbody>
@@ -25,16 +25,16 @@
                     <td>{{$order -> email}}</td>
                     <td>{{$order -> address}}, {{$order -> city}}</td>
                     <td>{{$order -> note }}</td>
-                    <!-- <td>
+                    <td>
                         <a class="edit-class" href="/admin/order/detail/{{$order -> order_detail}}">Chi tiết</a>
-                    </td> -->
+                    </td>
                     <td>{{$order -> created_at}}</td>
-                    <!-- <td>
+                    <td>
                         <a class="non_confirm-order" href="">Đã xác nhận</a>
                     </td>
                     <td>
-                    <a class="delete-class" href="">Xóa</a>
-                    </td> -->
+                    <a onclick="removeRow(product_id={{$order -> id}},url ='/admin/product/delete')" class="delete-class" href="#">Xóa</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

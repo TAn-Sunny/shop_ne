@@ -12,10 +12,10 @@
                     <div class="footer_widget_list text-right">
                         <div class="footer_menu">
                             <ul class="d-flex justify-content-end">
-                                <li><a href="index.html">home</a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="product-details.html">Product</a></li>
-                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="/frontend/home">home</a></li>
+                                <li><a href="/frontend/shop">Shop</a></li>
+                                <li><a href="/frontend/product_detail">Product</a></li>
+                                <li><a href="/frontend/blog">Blog</a></li>
                             </ul>
                         </div>
                         <div class="footer_social">

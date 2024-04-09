@@ -48,7 +48,7 @@
                     <article class="single_blog products community">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -57,7 +57,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Five things you only know if you’re at Chanel's Hamburg Show</a></h3>
+                                <h3><a href="/frontend/blog-details">Five things you only know if you’re at Chanel's Hamburg Show</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -66,7 +66,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog2.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog2.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -75,7 +75,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Basic colord mixed - trendind 2020</a></h3>
+                                <h3><a href="/frontend/blog-details">Basic colord mixed - trendind 2020</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -84,7 +84,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog3.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog3.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -93,7 +93,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Calvin Klein Shoes Collection 2020, Activites Summer</a></h3>
+                                <h3><a href="/frontend/blog-details">Calvin Klein Shoes Collection 2020, Activites Summer</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -102,7 +102,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog4.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog4.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -111,7 +111,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Five things you only know if you’re at Chanel's Hamburg Show</a></h3>
+                                <h3><a href="/frontend/blog-details">Five things you only know if you’re at Chanel's Hamburg Show</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -120,7 +120,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog5.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog5.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -129,7 +129,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Basic colord mixed - trendind 2020</a></h3>
+                                <h3><a href="/frontend/blog-details">Basic colord mixed - trendind 2020</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -138,7 +138,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog6.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog6.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -147,7 +147,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Calvin Klein Shoes Collection 2020, Activites Summer</a></h3>
+                                <h3><a href="/frontend/blog-details">Calvin Klein Shoes Collection 2020, Activites Summer</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -156,7 +156,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog7.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog7.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -165,7 +165,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Five things you only know if you’re at Chanel's Hamburg Show</a></h3>
+                                <h3><a href="/frontend/blog-details">Five things you only know if you’re at Chanel's Hamburg Show</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -174,7 +174,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog8.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog8.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -183,7 +183,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Basic colord mixed - trendind 2020</a></h3>
+                                <h3><a href="/frontend/blog-details">Basic colord mixed - trendind 2020</a></h3>
                             </figcaption>
                         </figure>
                     </article>
@@ -192,7 +192,7 @@
                     <article class="single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog9.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog9.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -201,7 +201,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Calvin Klein Shoes Collection 2020, Activites Summer</a></h3>
+                                <h3><a href="/frontend/blog-details">Calvin Klein Shoes Collection 2020, Activites Summer</a></h3>
                             </figcaption>
                         </figure>
                     </article>

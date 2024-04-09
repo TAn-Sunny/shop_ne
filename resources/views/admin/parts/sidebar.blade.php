@@ -6,7 +6,7 @@
         <li><a href=""><i class="ri-dashboard-line"></i>Dashboard<i class="ri-add-box-line"></i></a>
             <ul class="sub-menu">
                 <div class="sub-menu-item">
-                    <li><a href="/admin"><i class="ri-arrow-right-s-fill"></i>Home</a></li>
+                    <li><a href="/frontend/home"><i class="ri-arrow-right-s-fill"></i>Home</a></li>
                 </div>
             </ul>
         </li>
