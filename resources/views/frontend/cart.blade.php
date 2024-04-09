@@ -57,10 +57,12 @@
                                             $total = 0;
                                         @endphp
                                         @foreach($products as $product)
-                                            @php
-                                                $price = $product -> price_sale * Session::get('/frontend/cart')[$product -> id];
-                                                $total += $price;
+                                        @php
+                                            $cart = Session::get('/frontend/cart');
+                                            $price = isset($cart[$product->id]) ? $product->price_sale * $cart[$product->id] : 0;
+                                            $total += $price;
                                             @endphp
+
                                             <tr class="border-top">
                                                 <td>
                                                     <div class="cart_product_thumb">
@@ -79,7 +81,8 @@
                                                 </td>
                                                 <td class="product_quantity">
                                                     <div class="cart_product_quantity">
-                                                        <input onKeyDown="return false" name="product_id[{{$product -> id}}]" type="number" value="{{Session::get('/frontend/cart')[$product -> id]}}">
+                                                    <input onKeyDown="return false" name="product_id[{{$product -> id}}]" type="number" value="{{ isset(Session::get('/frontend/cart')[$product -> id]) ? Session::get('/frontend/cart')[$product -> id] : 0 }}">
+
                                                     </div>
                                                 </td>
                                                 <td>
