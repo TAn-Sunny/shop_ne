@@ -1,45 +1,4 @@
 <header class="header_section border-bottom">
-<<<<<<< Updated upstream
-        <div class="main_header">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="header_container d-flex justify-content-between align-items-center">
-                            <div class="canvas_open">
-                                <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
-                            </div>
-                            <div class="header_logo">
-                                <a class="sticky_none" href="{{Asset('frontend/home')}}"><img src="{{Asset('frontend/assets/img/logo/logo.png')}}" alt=""></a>
-                            </div>
-                            <!--main menu start-->
-                            <div class="main_menu d-none d-lg-block">
-                                <nav>
-                                    <ul class="d-flex">
-                                        <li><a href="{{Asset('frontend/home')}}">Home</a> </li>
-                                        <li><a href="{{Asset('frontend/shop')}}">Shop</a> </li>
-
-                                        <li><a href="{{Asset('frontend/blog')}}">blog</a>
-                                            <ul class="sub_menu">
-                                                <li><a href="{{Asset('frontend/blog')}}">Blog Pages</a></li>
-                                                <li><a href="{{Asset('frontend/blog-details')}}">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="header_account">
-                                <ul class="d-flex">
-                                    <li class="header_search"><a href="#"><i class="icon-magnifier icons"></i></a></li>
-                                    <li class="account_link"><a href="#"><i class="icon-user icons"></i></a>
-                                        <ul class="dropdown_account_link">
-                                            <li><a href="#">My Account</a></li>
-                                            @if (Auth::check())
-                                                <li><a href="/logout">Logout</a></li>
-                                            @else
-                                                <li><a href="/login">Login</a></li>
-                                            @endif  
-                                            <li><a href="#">Contact</a></li>
-=======
     <div class="main_header">
         <div class="container-fluid">
             <div class="row">
@@ -57,13 +16,12 @@
                                 <ul class="d-flex">
                                     <li><a href="{{Asset('frontend/home')}}">Home</a> </li>
                                     <li><a href="{{Asset('frontend/shop')}}">Shop</a> </li>
-                                    <li><a href="{{Asset('frontend/product_details')}}">product</a></li>
+            
 
                                     <li><a href="{{Asset('frontend/blog')}}">blog</a>
                                         <ul class="sub_menu">
                                             <li><a href="{{Asset('frontend/blog')}}">Blog Pages</a></li>
                                             <li><a href="{{Asset('frontend/blog-details')}}">Blog Details</a></li>
->>>>>>> Stashed changes
                                         </ul>
                                     </li>
                                 </ul>
@@ -79,7 +37,7 @@
                                     <a href="#"><i class="icon-user icons"></i></a>
                                 @endif
                                 <ul class="dropdown_account_link">
-                                    <li><a href="#">My Account</a></li>
+                                    
                                     @if (Auth::check())
                                         <li><a href="/logout">Logout</a></li>
                                     @else

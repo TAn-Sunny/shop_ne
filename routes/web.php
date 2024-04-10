@@ -112,6 +112,9 @@ Route::get('/login_onprocess', function () {
 Route::get('/signup_after', function () {
     return view('login.signnup');
 });
+Route::get('/signup-success', function () {
+    return view('login.signup-success');
+});
 
 
 Route::get('/login', 'App\Http\Controllers\LoginController@index')->name('login');
