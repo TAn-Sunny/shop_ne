@@ -143,7 +143,7 @@
                                         </div>
                                     </div>
                                     <figcaption class="product_content text-center">
-                                        <h4 class="product_name"><a href="/frontend/product-details/{{$product -> id}}">{{$product -> name}}</a></h4>
+                                        <h4 class="product_name"><a href="/frontend/product_details/{{$product -> id}}">{{$product -> name}}</a></h4>
                                         <span>
                                             <p>{{$product -> material}}</p>
                                                 </span>
@@ -152,9 +152,9 @@
                                             <span class="old_price">{{$product -> price_nomal}}</span>
                                         </div>
                                         <div class="add_to_cart">
-                                            <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
+                                            <a class="btn btn-primary" href="/frontend/product_details/{{$product -> id}}" data-tippy="View Detail"
                                                 data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true"
-                                                data-tippy-placement="top">Add To Cart
+                                                data-tippy-placement="top">View
                                             </a>
                                         </div>
                                     </figcaption>

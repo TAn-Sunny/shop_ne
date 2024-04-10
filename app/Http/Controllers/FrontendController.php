@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use App\Models\order;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\DB;
-
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
 use App\Notifications\EmailNotification;

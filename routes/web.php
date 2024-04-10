@@ -7,6 +7,7 @@ use App\Models\product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\orderController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RecommendationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,3 +116,5 @@ Route::post('/signup', 'App\Http\Controllers\\LoginController@signup');
 Route::get('/laravel-coding/login/validate-email', 'App\Http\Controllers\EmailController@validateEmail');
 Route::post('/login/process-signup', 'App\Http\Controllers\SignUpController@signup')->name('login.process-signup');
 //frontend/login
+
+
