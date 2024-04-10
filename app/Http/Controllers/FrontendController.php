@@ -13,6 +13,7 @@ use App\Notifications\EmailNotification;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserCart;
+use Illuminate\Support\Arr;
 
 // namespace App\Mail;
 // use App\Mail\TestMail;
@@ -35,60 +36,88 @@ class FrontendController extends Controller
 
     public function show_product(Request $request){
         $product = product::find($request -> id);
-        return view('frontend.product_details',[
-            'product' => $product
-        ]);
+        $category = $product -> category;
+        $related_p = product::where('category',$category) -> where('id','!=',$request -> id) -> latest() -> get();
+        return view('frontend.product_details',compact('product','related_p'));
     }
     
+<<<<<<< Updated upstream
+   public function add_cart(Request $request){
+    // Kiểm tra xem người dùng đã đăng nhập chưa
+    if (!Auth::check()) {
+        return redirect()->route('login')->with('error', 'Bạn cần đăng nhập trước khi thêm sản phẩm vào giỏ hàng.');
+=======
     public function add_cart(Request $request){
         $product_id = $request -> product_id;
-        $quantity = $request -> product_quantity; // Lấy số lượng từ yêu cầu
-        $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
-    
-        // Tìm giỏ hàng của người dùng hiện tại
-        $cart = UserCart::where('user_id', $user_id)->where('product_id', $product_id)->first();
-    
-        if (!$cart) {
-            // Nếu không, tạo một giỏ hàng mới
-            $cart = new UserCart;
-            $cart->user_id = $user_id;
-            $cart->product_id = $product_id;
-            $cart->quantity = $quantity;
-        } else {
-            // Nếu có, cập nhật số lượng sản phẩm
-            $cart->quantity += $quantity;
+        $product_quantity = $request -> product_quantity;
+        if(is_null(Session::get('/frontend/cart'))){
+            Session::put('/frontend/cart', [
+                $product_id => $product_quantity
+            ]);
+            return redirect('/frontend/cart');
+        }else{
+            $cart = Session::get('/frontend/cart');
+            if(Arr::exists($cart,$product_id)){
+                $cart[$product_id] += $product_quantity;
+                Session::put('/frontend/cart',$cart);
+                return redirect('/frontend/cart');
+            }else{
+                $cart[$product_id] = $product_quantity;
+                Session::put('/frontend/cart',$cart);
+                return redirect('/frontend/cart');
+            }
         }
-    
-        $cart->save();
-    
-        return redirect('/frontend/cart');
+>>>>>>> Stashed changes
     }
     
-    
-    
-    
-    
-    
+    // Kiểm tra và xử lý dữ liệu đầu vào
+    $product_id = $request->input('product_id');
+    if (!$product_id) {
+        return redirect()->back()->with('error', 'Không tìm thấy sản phẩm.');
+    }
+
+    $user_id = Auth::user()->id;
+
+    // Tìm hoặc tạo một mục giỏ hàng mới
+    $cart = UserCart::where('user_id', $user_id)->where('product_id', $product_id)->first();
+    if (!$cart) {
+        $cart = new UserCart;
+        $cart->user_id = $user_id;
+        $cart->product_id = $product_id;
+    }
+
+    // Lưu mục giỏ hàng và thông báo kết quả
+    $cart->save();
+    return redirect('/frontend/cart')->with('success', 'Sản phẩm đã được thêm vào giỏ hàng thành công.');
+}
+
     
     
     public function show_cart(){
         $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
-    
-        // Lấy tất cả các mục giỏ hàng của người dùng hiện tại
-        $cart_items = UserCart::where('user_id', $user_id)->get();
-    
-        // Lấy thông tin sản phẩm và số lượng cho mỗi mục giỏ hàng
+        
+        // Lấy tất cả các mục giỏ hàng của người dùng hiện tại từ cơ sở dữ liệu
+        $cart_items = UserCart::where('user_id', $user_id)->with('product_id')-> get();
+        dd($cart_items);
+        // Tạo một mảng chứa thông tin sản phẩm trong giỏ hàng
         $products = [];
+        
+        // Duyệt qua từng mục giỏ hàng
         foreach ($cart_items as $item) {
-            $product = Product::find($item->product_id);
-            $product->quantity = $item->quantity; // Add quantity to product object
-            $products[] = $product;
+            // Lấy thông tin sản phẩm từ mô hình UserCart qua mối quan hệ
+            $product = $item->product;
+            
+            // Kiểm tra xem sản phẩm có tồn tại không
+            if ($product) {
+                $products[] = $product;
+            }
         }
-    
-        return view('/frontend/cart',[
-            'products' => $products
-        ]);
+        
+        // Trả về view '/frontend/cart' với thông tin sản phẩm và giỏ hàng
+        return view('/frontend/cart', compact('products'));
     }
+    
+    
     
 
     public function delete_cart(Request $request){
@@ -103,7 +132,8 @@ class FrontendController extends Controller
             $cart_item->delete();
         }
     
-        return redirect('/frontend/cart');
+
+        
     }
     
     public function send_cart(Request $request){
@@ -123,7 +153,7 @@ class FrontendController extends Controller
         $mail_info = $order -> email;
         $name_info = $order -> name;
         $Mail = Mail::to($mail_info) -> send(new TestMail($name_info));
-        Notification::send($order, new EmailNotification($order) );
+        Notification::send("thienantang123@gmail.com", new EmailNotification("thienantang123@gmail.com") );
         return redirect('/order/confirm');
 
     }

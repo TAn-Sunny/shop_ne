@@ -37,6 +37,7 @@
     <!--product details start-->
     <section class="product_details mb-135">
         <form action="/frontend/cart/add" method="post">
+        @csrf
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -61,36 +62,35 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
-    <div class="product_d_right">
-        <h1>{{$product -> name}}</h1>
-        <div class="product_desc">
-            <p>{{$product -> material}}</p>
-        </div>
-        <div class="price_box">
-            <span class="current_price">{{$product -> price_sale}}</span>
-            <span class="old_price">{{$product -> price_nomal}}</span>
-        </div>
-        <div class="product_desc">
-            <p>{!!$product -> description!!}</p>
-        </div>
-        <div class="product_variant">
-            <div class="variant_quantity_btn d-flex">
-                <div class="pro-qty border">
-                    <input class="quantity-input" type="number" min="1" value="1" name="product_quantity">
-                    <input type="hidden" value="{{$product -> id}}"  name="product_id">
+                        <div class="product_d_right">
+                                <h1>{{$product -> name}}</h1>
+                                <div class="product_desc">
+                                    <p>{{$product -> material}}</p>
+                                </div>
+                                <div class="price_box">
+                                    <span class="current_price">${{$product -> price_sale}}</span>
+                                    <span class="old_price">${{$product -> price_nomal}}</span>
+                                </div>
+                                <div class="product_desc">
+                                    <p>{!!$product -> description!!}</p>
+                                </div>
+                                <div class="product_variant">
+                                    <div class="variant_quantity_btn d-flex">
+                                        <div class="pro-qty border">
+                                            <input onkeydown="return false" type="number" value="1" name="product_quantity">
+                                            <input type="hidden" value="{{$product -> id}}"  name="product_id">
+                                        </div>
+                                        <button class="button btn btn-primary" type="submit"></i>Add To Cart</button>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
                 </div>
-                <button class="button btn btn-primary" type="submit"></i>Add To Cart</button>
             </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-@csrf
-</form>
-</section>
-
-
+        @csrf
+        </form>
+    </section>
     <!--product details end-->
 
     <!--product info start-->
@@ -149,12 +149,13 @@
                       {"breakpoint":300, "settings": { "slidesToShow": 1 } }
                      ]
                 }'>
+                    @foreach ($related_p as $product)
                     <div class="col-lg-3">
                         <article class="single_product">
                             <figure>
                                 <div class="product_thumb">
                                     <a href="product-details.html" >
-                                        <img class="primary_img" src="{{Asset('frontend/assets/img/product/product1.jpg')}}" alt="consectetur">
+                                        <img class="primary_img" src="{{Asset($product -> image)}}" alt="consectetur">
                                     </a>
                                     <div class="product_action">
                                         <ul>
@@ -169,146 +170,19 @@
                                 </div>
                                 <figcaption class="product_content text-center">
                                     
-                                    <h4 class="product_name"><a href="product-details.html">Basic Joggin Shorts</a></h4>
+                                    <h4 class="product_name"><a href="product-details.html">{{$product -> name}}</a></h4>
                                     <div class="price_box">
-                                        <span class="current_price">$26.00</span>
-                                        <span class="old_price">$62.00</span>
+                                        <span class="current_price">${{$product -> price_nomal}}</span>
+                                        <span class="old_price">${{$product -> sale}}</span>
                                     </div>
                                     <div class="add_to_cart">
-                                        <a class="btn btn-primary" href="#" data-tippy="Add To Cart"  data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="top">Add To Cart</a>
+                                        <a class="btn btn-primary" href="/frontend/product_details/{{$product -> id}}" data-tippy="View detail"  data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="top">View</a>
                                     </div>
                                 </figcaption>
                             </figure>
                         </article>
                     </div>
-                    <div class="col-lg-3">
-                        <article class="single_product">
-                            <figure>
-                                <div class="product_thumb">
-                                    <a href="product-details.html" >
-                                        <img class="primary_img" src="{{Asset('frontend/assets/img/product/product2.jpg')}}" alt="consectetur">
-                                    </a>
-                                    <div class="product_action">
-                                        <ul>
-                                            <li class="wishlist"><a href="#" data-tippy="Wishlist" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-heart icons"></i></a></li>
-
-                                            <li class="quick_view"><a data-toggle="modal" data-target="#modal_box" data-tippy="Quick View" href="#" data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-size-fullscreen icons"></i></a></li>
-                                            <li class="compare"><a data-tippy="Compare" href="#" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-refresh icons"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product_label">
-                                        <span>-20%</span>
-                                    </div>
-                                </div>
-                                <figcaption class="product_content text-center">
-                                    <div class="product_ratting">
-                                        <ul class="d-flex justify-content-center">
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><span>(6)</span></li>
-                                        </ul>
-                                    </div>
-                                    <h4 class="product_name"><a href="product-details.html">Make Thing Happen T-Shirts</a></h4>
-                                    <div class="price_box">
-                                        <span class="text-black">$38.00</span>
-
-                                    </div>
-                                    <div class="add_to_cart">
-                                        <a class="btn btn-primary" href="#" data-tippy="Add To Cart"  data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="top">Add To Cart</a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </article>
-                    </div>
-                    <div class="col-lg-3">
-                        <article class="single_product">
-                            <figure>
-                                <div class="product_thumb">
-                                    <a href="product-details.html" >
-                                        <img class="primary_img" src="{{Asset('frontend/assets/img/product/product3.jpg')}}" alt="consectetur">
-                                    </a>
-                                    <div class="product_action">
-                                        <ul>
-                                            <li class="wishlist"><a href="#" data-tippy="Wishlist" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-heart icons"></i></a></li>
-
-                                            <li class="quick_view"><a data-toggle="modal" data-target="#modal_box" data-tippy="Quick View" href="#" data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-size-fullscreen icons"></i></a></li>
-                                            <li class="compare"><a data-tippy="Compare" href="#" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-refresh icons"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product_label">
-                                        <span>-18%</span>
-                                    </div>
-                                </div>
-                                <figcaption class="product_content text-center">
-                                    <div class="product_ratting">
-                                        <ul class="d-flex justify-content-center">
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><span>(2)</span></li>
-                                        </ul>
-                                    </div>
-                                    <h4 class="product_name"><a href="product-details.html">Basic White Simple Sneaker</a></h4>
-                                    <div class="price_box">
-                                        <span class="current_price">$43.00</span>
-                                        <span class="old_price">$46.00</span>
-                                    </div>
-                                    <div class="add_to_cart">
-                                        <a class="btn btn-primary" href="#" data-tippy="Add To Cart"  data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="top">Add To Cart</a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </article>
-                    </div>
-                    <div class="col-lg-3">
-                        <article class="single_product">
-                            <figure>
-                                <div class="product_thumb">
-                                    <a href="product-details.html" >
-                                        <img class="primary_img" src="{{Asset('frontend/assets/img/product/product4.jpg')}}" alt="consectetur">
-                                    </a>
-                                    <div class="product_action">
-                                        <ul>
-                                            <li class="wishlist"><a href="#" data-tippy="Wishlist" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-heart icons"></i></a></li>
-
-                                            <li class="quick_view"><a data-toggle="modal" data-target="#modal_box" data-tippy="Quick View" href="#" data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-size-fullscreen icons"></i></a></li>
-                                            <li class="compare"><a data-tippy="Compare" href="#" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-refresh icons"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <figcaption class="product_content text-center">
-                                    <div class="product_ratting">
-                                        <ul class="d-flex justify-content-center">
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-android-star"></i></a></li>
-                                            <li><span>(8)</span></li>
-                                        </ul>
-                                    </div>
-                                    <h4 class="product_name"><a href="product-details.html">Simple Rounded Sunglasses</a></h4>
-                                    <div class="price_box">
-                                       <span class="text-black">$42.00</span>
-                                    </div>
-                                    <div class="add_to_cart">
-                                        <a class="btn btn-primary" href="#" data-tippy="Add To Cart"  data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="top">Add To Cart</a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </article>
-                    </div>
+                    @endforeach
                     
                 </div>
             </div>

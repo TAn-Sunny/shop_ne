@@ -23,6 +23,7 @@ class productController extends Controller
         $product -> description = $request -> input('description');
         $product -> content = $request -> input('content');
         $product -> image = $request -> input('image');
+        $product -> category = $request -> input('category');
         $product_images = implode("*",$request -> input('images'));
         $product -> images = $product_images;
         $product ->save();

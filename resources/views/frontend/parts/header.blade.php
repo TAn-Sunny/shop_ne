@@ -16,7 +16,6 @@
                                     <ul class="d-flex">
                                         <li><a href="{{Asset('frontend/home')}}">Home</a> </li>
                                         <li><a href="{{Asset('frontend/shop')}}">Shop</a> </li>
-                                        <li><a href="{{Asset('frontend/product_details')}}">product</a></li>
 
                                         <li><a href="{{Asset('frontend/blog')}}">blog</a>
                                             <ul class="sub_menu">
@@ -37,7 +36,7 @@
                                                 <li><a href="/logout">Logout</a></li>
                                             @else
                                                 <li><a href="/login">Login</a></li>
-                                            @endif
+                                            @endif  
                                             <li><a href="#">Contact</a></li>
                                         </ul>
                                     </li>

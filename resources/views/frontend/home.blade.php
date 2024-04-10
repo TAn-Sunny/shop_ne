@@ -71,8 +71,6 @@
             </div>
         </div>
     </section>
-
-
     <!--slider area end-->
 
     <!--shipping section start-->
@@ -150,10 +148,6 @@
         </div>
     </section>
     <!-- banner section end -->
-
-    <!-- product section start -->
-
-    <!-- product section end -->
 
     <!-- banner section start -->
     <section class="banner_section banner_style2 mb-109">
@@ -243,8 +237,8 @@
                     <p>{{$product -> material}}</p>
                         </span>
                 <div class="price_box">
-                    <span class="current_price">{{$product -> price_sale}}</span>
-                    <span class="old_price">{{$product -> price_nomal}}</span>
+                    <span class="current_price">${{$product -> price_sale}}</span>
+                    <span class="old_price">${{$product -> price_nomal}}</span>
                 </div>
                 <div class="add_to_cart">
                     <a class="btn btn-primary" href="#" data-tippy="Add To Cart"
@@ -274,7 +268,7 @@
                     <h2>press & look</h2>
                 </div>
                 <div class="all_articles">
-                    <a href="blog.html">All articles</a>
+                    <a href="/frontend/blog-details">All articles</a>
                 </div>
             </div>
             <div class="blog_container row">
@@ -295,7 +289,7 @@
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -304,7 +298,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Five things you only know if you’re at Chanel's Hamburg
+                                <h3><a href="/frontend/blog-details">Five things you only know if you’re at Chanel's Hamburg
                                         Show</a></h3>
                             </figcaption>
                         </figure>
@@ -312,7 +306,7 @@
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog2.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog2.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -321,14 +315,14 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Basic colord mixed - trendind 2020</a></h3>
+                                <h3><a href="/frontend/blog-details">Basic colord mixed - trendind 2020</a></h3>
                             </figcaption>
                         </figure>
                     </article>
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog3.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog3.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -337,7 +331,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Calvin Klein Shoes Collection 2020, Activites Summer</a>
+                                <h3><a href="/frontend/blog-details">Calvin Klein Shoes Collection 2020, Activites Summer</a>
                                 </h3>
                             </figcaption>
                         </figure>
@@ -345,7 +339,7 @@
                     <article class="col single_blog">
                         <figure>
                             <div class="blog_thumb">
-                                <a href="blog-details.html"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
+                                <a href="/frontend/blog-details"><img src="{{Asset('frontend/assets/img/blog/blog1.jpg')}}" alt=""></a>
                             </div>
                             <figcaption class="blog_content">
                                 <div class="blog_meta">
@@ -354,7 +348,7 @@
                                         <li><span>May 25, 2020</span></li>
                                     </ul>
                                 </div>
-                                <h3><a href="blog-details.html">Five things you only know if you’re at Chanel's Hamburg
+                                <h3><a href="/frontend/blog-details">Five things you only know if you’re at Chanel's Hamburg
                                         Show</a></h3>
                             </figcaption>
                         </figure>
