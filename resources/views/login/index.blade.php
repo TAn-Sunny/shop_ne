@@ -26,7 +26,7 @@ if (isset($_SESSION["users_id"])) {
   </head>
   <body>
     <h1>Hello</h1>
-    <!--Index Test -->
+
     @if (Auth::check())
     <p>Hello {{ Auth::user()->name }}</p>
     <p><a href = "/logout">Log out</a></p>

@@ -28,7 +28,7 @@ if (request()->isMethod('post')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign in & Sign up Form</title>
     <link rel="stylesheet" href="{{Asset('login_public/style.css')}}" />
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"  defer></script>
+     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"  defer></script>
     <script src = "{{Asset('login_public/validation.js')}}" defer></script>
     
   </head>
@@ -45,11 +45,12 @@ if (request()->isMethod('post')) {
                     @endforeach
                 </div>
             @endif
-          <!--Xử lý login -->
+      
             <form action="/login" autocomplete="off" class="sign-in-form" 
             method = "post" id = login>
               <div class="logo">
-                <h4>|     bazzar</h4>
+                <img src="{{Asset('login_public/img/logo.png')}}" alt="easyclass" />
+                <h4>Testing</h4>
               </div>
 
               <div class="heading">
@@ -90,17 +91,17 @@ if (request()->isMethod('post')) {
                 <input type="submit" value="Sign In" class="sign-btn" />
 
                 <p class="text">
-                  Shop with us and you'll love the way you look.
-                  <p class = "text">Get ready for summer!</p>
+                  Forgotten your password or you login datails?
+                  <a href="#">Get help</a> signing in
                 </p>
               </div>
               @csrf
             </form>
-        <!--Xử lý signup -->
+
             <form action="{{ route('login.process-signup') }}" autocomplete="off" class="sign-up-form" method = "post" id = "signup" novalidate>
               <div class="logo">
-                
-                <h4>|     bazzar</h4>
+                <img src="{{Asset('login_public/img/logo.png')}}" alt="easyclass" />
+                <h4>easyclass</h4>
               </div>
 
               <div class="heading">
@@ -177,7 +178,7 @@ if (request()->isMethod('post')) {
               @csrf
             </form>
           </div>
-          <!--Xử lý text slide -->
+
           <div class="carousel">
             <div class="images-wrapper">
               <img src="{{Asset('login_public/img/image1.png')}}" class="image img-1 show" alt="" />
