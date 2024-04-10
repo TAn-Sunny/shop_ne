@@ -290,15 +290,34 @@
             $(this).val(newQuantity);
         }
     
-        // Lấy giá sản phẩm từ một phần tử HTML khác
-        var pricePerItem = parseFloat($(this).closest('tr').find('.cart_product_price span').text().substring(1));
+        // Lấy ID sản phẩm từ thuộc tính data của input
+        var productId = $(this).data('product-id');
     
-        // Tính toán tổng giá mới
-        var newTotalPrice = newQuantity * pricePerItem;
-    
-        // Cập nhật tổng giá trong giao diện người dùng
-        $(this).closest('tr').find('.cart_product_total span').text('$' + newTotalPrice.toFixed(2));
+        // Gửi yêu cầu cập nhật số lượng sản phẩm qua Ajax
+        $.ajax({
+            url: '/frontend/cart/update',
+            method: 'POST',
+            data: {
+                _token: '{{ csrf_token() }}',
+                product_id: productId,
+                quantity: newQuantity
+            },
+            success: function(response) {
+                // Nếu yêu cầu thành công, cập nhật giá tiền và tổng giá trên giao diện người dùng
+                // Ví dụ: giả sử response là một đối tượng JSON chứa thông tin cập nhật về giá sản phẩm và tổng giá mới
+                var newPrice = response.new_price; // Giá sản phẩm mới sau khi cập nhật
+                var newTotalPrice = response.new_total_price; // Tổng giá mới sau khi cập nhật
+            
+                // Cập nhật giá sản phẩm trong hàng hiện tại
+                $(this).closest('tr').find('.cart_product_price span').text('$' + newPrice.toFixed(2));
+            
+                // Cập nhật tổng giá trong hàng hiện tại
+                $(this).closest('tr').find('.cart_product_total span').text('$' + newTotalPrice.toFixed(2));
+            },
+            
+        });
     });
+    
     
     
     /*---slider-range here---*/

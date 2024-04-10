@@ -41,54 +41,87 @@ class FrontendController extends Controller
     }
     
     public function add_cart(Request $request){
-        $product_id = $request -> product_id;
-        $quantity = $request -> product_quantity; // Lấy số lượng từ yêu cầu
-        $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
-    
-        // Tìm giỏ hàng của người dùng hiện tại
-        $cart = UserCart::where('user_id', $user_id)->where('product_id', $product_id)->first();
-    
-        if (!$cart) {
-            // Nếu không, tạo một giỏ hàng mới
-            $cart = new UserCart;
-            $cart->user_id = $user_id;
-            $cart->product_id = $product_id;
-            $cart->quantity = $quantity;
+        $product_id = $request->product_id;
+        $quantity = $request->product_quantity; // Lấy số lượng từ yêu cầu
+        
+        // Kiểm tra xem người dùng đã đăng nhập chưa
+        if(Auth::check()) {
+            // Nếu đã đăng nhập, lấy ID của người dùng hiện tại
+            $user_id = Auth::user()->id;
+            
+            // Tìm giỏ hàng của người dùng hiện tại
+            $cart = UserCart::where('user_id', $user_id)->where('product_id', $product_id)->first();
+        
+            if (!$cart) {
+                // Nếu không, tạo một giỏ hàng mới
+                $cart = new UserCart;
+                $cart->user_id = $user_id;
+                $cart->product_id = $product_id;
+                $cart->quantity = $quantity;
+            } else {
+                // Nếu có, cập nhật số lượng sản phẩm
+                $cart->quantity += $quantity;
+            }
+        
+            $cart->save();
         } else {
-            // Nếu có, cập nhật số lượng sản phẩm
-            $cart->quantity += $quantity;
+            // Nếu chưa đăng nhập, lưu thông tin sản phẩm vào session
+            $cart = Session::get('cart', []);
+            
+            // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+            if(isset($cart[$product_id])) {
+                // Nếu đã tồn tại, cập nhật số lượng
+                $cart[$product_id] += $quantity;
+            } else {
+                // Nếu chưa tồn tại, thêm mới sản phẩm vào giỏ hàng
+                $cart[$product_id] = $quantity;
+            }
+            
+            // Lưu lại giỏ hàng vào session
+            Session::put('cart', $cart);
         }
-    
-        $cart->save();
     
         return redirect('/frontend/cart');
     }
     
     
-    
-    
-    
-    
-    
+
     
     public function show_cart(){
-        $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
+        // Kiểm tra xem người dùng đã đăng nhập chưa
+        if(Auth::check()) {
+            $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
     
-        // Lấy tất cả các mục giỏ hàng của người dùng hiện tại
-        $cart_items = UserCart::where('user_id', $user_id)->get();
+            // Lấy tất cả các mục giỏ hàng của người dùng hiện tại
+            $cart_items = UserCart::where('user_id', $user_id)->get();
     
-        // Lấy thông tin sản phẩm và số lượng cho mỗi mục giỏ hàng
-        $products = [];
-        foreach ($cart_items as $item) {
-            $product = Product::find($item->product_id);
-            $product->quantity = $item->quantity; // Add quantity to product object
-            $products[] = $product;
+            // Lấy thông tin sản phẩm và số lượng cho mỗi mục giỏ hàng
+            $products = [];
+            foreach ($cart_items as $item) {
+                $product = Product::find($item->product_id);
+                $product->quantity = $item->quantity; // Add quantity to product object
+                $products[] = $product;
+            }
+        } else {
+            // Nếu chưa đăng nhập, lấy thông tin giỏ hàng từ session
+            $cart = Session::get('cart', []);
+            
+            // Lấy thông tin sản phẩm từ session giỏ hàng
+            $products = [];
+            foreach ($cart as $product_id => $quantity) {
+                $product = Product::find($product_id);
+                if ($product) {
+                    $product->quantity = $quantity; // Add quantity to product object
+                    $products[] = $product;
+                }
+            }
         }
     
         return view('/frontend/cart',[
             'products' => $products
         ]);
     }
+    
     
 
     public function delete_cart(Request $request){
