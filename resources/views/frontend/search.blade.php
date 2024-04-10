@@ -25,47 +25,25 @@
                                 <h2>Categories</h2>
                                 <ul>
                                     <li class="widget_sub_categories"><a href="javascript:void(0)" data-toggle="collapse" data-target="#men">Men</a>
-                                        <ul class="widget_dropdown_categories collapse show" id="men">
-                                            <li><a href="#"> New products <span>104</span></a></li>
-                                            <li><a href="#">Gymwear <span>68</span></a></li>
-                                            <li><a href="#">Jakets <span>75</span></a></li>
-                                            <li><a href="#">Jeans <span>30</span></a></li>
-                                            <li><a href="#">Shirts <span>150</span></a></li>
-                                            <li><a href="#">T-Shirts <span>113</span></a></li>
-                                            <li><a href="#">Accessories <span>95</span></a></li>
-                                        </ul>
+                                            <ul class="widget_dropdown_categories collapse show" id="men">
+                                                <li><a href="/frontend/search?key=Men">Shirt</a></li>
+                                                <li><a href="/frontend/search?key=Pant">Pants </a></li>
+                                                <li><a href="/frontend/search?key=Set">Set</a></li>
+                                            </ul>
                                     </li>
                                     <li class="widget_sub_categories"><a href="javascript:void(0)" data-toggle="collapse" data-target="#women">women</a>
                                         <ul class="widget_dropdown_categories collapse" id="women">
-                                            <li><a href="#"> New products <span>104</span></a></li>
-                                            <li><a href="#">Gymwear <span>68</span></a></li>
-                                            <li><a href="#">Jakets <span>75</span></a></li>
-                                            <li><a href="#">Jeans <span>30</span></a></li>
-                                            <li><a href="#">Shirts <span>150</span></a></li>
-                                            <li><a href="#">T-Shirts <span>113</span></a></li>
-                                            <li><a href="#">Accessories <span>95</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget_sub_categories"><a href="javascript:void(0)" data-toggle="collapse" data-target="#footwear">footwear</a>
-                                        <ul class="widget_dropdown_categories collapse" id="footwear">
-                                            <li><a href="#"> New products <span>104</span></a></li>
-                                            <li><a href="#">Gymwear <span>68</span></a></li>
-                                            <li><a href="#">Jakets <span>75</span></a></li>
-                                            <li><a href="#">Jeans <span>30</span></a></li>
-                                            <li><a href="#">Shirts <span>150</span></a></li>
-                                            <li><a href="#">T-Shirts <span>113</span></a></li>
-                                            <li><a href="#">Accessories <span>95</span></a></li>
+                                            <li><a href="/frontend/search?key=women"> Shirt </a></li>
+                                            <li><a href="/frontend/search?key=dress">Dress </a></li>
+                                            <li><a href="#">Set</a></li>
+                                            
                                         </ul>
                                     </li>
                                     <li class="widget_sub_categories"><a href="javascript:void(0)" data-toggle="collapse" data-target="#accessories">accessories</a>
                                         <ul class="widget_dropdown_categories collapse" id="accessories">
-                                            <li><a href="#"> New products <span>104</span></a></li>
-                                            <li><a href="#">Gymwear <span>68</span></a></li>
-                                            <li><a href="#">Jakets <span>75</span></a></li>
-                                            <li><a href="#">Jeans <span>30</span></a></li>
-                                            <li><a href="#">Shirts <span>150</span></a></li>
-                                            <li><a href="#">T-Shirts <span>113</span></a></li>
-                                            <li><a href="#">Accessories <span>95</span></a></li>
+                                            <li><a href="/frontend/search?key=bag"> Bag</a></li>
+                                            <li><a href="/frontend/search?key=neck">Necktie</a></li>
+                                            <li><a href="#">Scarf</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -125,21 +103,7 @@
                                             <img class="primary_img" src="{{Asset($new -> image)}}" alt="consectetur">
                                         </a>
                                         <div class="product_action">
-                                            <ul>
-                                                <li class="wishlist"><a href="#" data-tippy="Wishlist"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-heart icons"></i></a></li>
-                                                <li class="quick_view"><a data-toggle="modal" data-target="#modal_box"
-                                                        data-tippy="Quick View" href="#" data-tippy-inertia="true"
-                                                        data-tippy-delay="50" data-tippy-arrow="true"
-                                                        data-tippy-placement="left"><i
-                                                            class="icon-size-fullscreen icons"></i></a></li>
-                                                <li class="compare"><a data-tippy="Compare" href="#"
-                                                        data-tippy-inertia="true" data-tippy-delay="50"
-                                                        data-tippy-arrow="true" data-tippy-placement="left"><i
-                                                            class="icon-refresh icons"></i></a></li>
-                                            </ul>
+                                          
                                         </div>
                                     </div>
                                     <figcaption class="product_content text-center">

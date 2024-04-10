@@ -154,23 +154,14 @@
                         <article class="single_product">
                             <figure>
                                 <div class="product_thumb">
-                                    <a href="product-details.html" >
+                                    <a href="/frontend/product_details/{{$product -> id}}" >
                                         <img class="primary_img" src="{{Asset($product -> image)}}" alt="consectetur">
                                     </a>
-                                    <div class="product_action">
-                                        <ul>
-                                            <li class="wishlist"><a href="#" data-tippy="Wishlist" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-heart icons"></i></a></li>
-
-                                            <li class="quick_view"><a data-toggle="modal" data-target="#modal_box" data-tippy="Quick View" href="#" data-tippy-inertia="true" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-size-fullscreen icons"></i></a></li>
-                                            <li class="compare"><a data-tippy="Compare" href="#" data-tippy-inertia="true" data-tippy-delay="50"
-                                            data-tippy-arrow="true" data-tippy-placement="left"><i class="icon-refresh icons"></i></a></li>
-                                        </ul>
-                                    </div>
+                                  
                                 </div>
                                 <figcaption class="product_content text-center">
                                     
-                                    <h4 class="product_name"><a href="product-details.html">{{$product -> name}}</a></h4>
+                                    <h4 class="product_name"><a href="/frontend/product_details/{{$product -> id}}">{{$product -> name}}</a></h4>
                                     <div class="price_box">
                                         <span class="current_price">${{$product -> price_nomal}}</span>
                                         <span class="old_price">${{$product -> sale}}</span>

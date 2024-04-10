@@ -118,21 +118,8 @@
                     </div>
                 </div>
 
-                <!--coupon code area start-->
-                <div class="cart_page_bottom">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-sm-8">
-                            <div class="grand_totall_area">
-                                <div class="border-bottom">
-                                    <div class="cart_grandtotal d-flex justify-content-between">
-                                        <p> Total</p>
-                                        <span>${{$total}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--coupon code area end-->
+             
 
                 <!-- checkout -->
                 <div class="checkout_section" id="accordion" style="margin-top: 50px;">
