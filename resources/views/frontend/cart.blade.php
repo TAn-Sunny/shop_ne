@@ -58,51 +58,61 @@
                                         $total = 0;
                                         @endphp
                                         @foreach($products as $product)
-                                        @php
-                                        $price = $product -> price_sale * Session::get('/frontend/cart')[$product -> id];
-                                        $total += $price;
-                                        @endphp
+                                @php
+                                    $quantity = $product->quantity; // Lấy số lượng sản phẩm từ giỏ hàng
+                                    $price = $product->price_sale * $quantity;
+                                    $total += $price;
+                                @endphp
 
-                                        <tr class="border-top">
-                                            <td>
-                                                <div class="cart_product_thumb">
-                                                    <img src="{{Asset($product -> image)}}" alt="">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_text">
-                                                    <h4>{{($product -> name)}}</h4>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_price">
-                                                    <span>${{($product -> price_sale)}}</span>
-                                                </div>
-                                            </td>
-                                            <td class="product_quantity">
-                                                <div class="cart_product_quantity">
-                                                <form action="/frontend/cart/update" method="POST">
-                                                    <input onKeyDown="return false" name="product_id[{{$product -> id}}]" type="number" value="{{Session::get('/frontend/cart')[$product -> id]}}">
-                                                    <input type="hidden" value="{{$product -> id}}" name="product_id">
-                                                    @csrf
-                                                        
-                                                    </form>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_price">
-                                                    <span>${{($price)}}</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="cart_product_remove text-right">
-                                                    <a href="/frontend/cart/delete/{{$product -> id}}"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                <tr class="border-top">
+                                    <td>
+                                        <div class="cart_product_thumb">
+                                            <img src="{{ asset($product->image) }}" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart_product_text">
+                                            <h4>{{ $product->name }}</h4>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart_product_price">
+                                            <span>${{ $product->price_sale }}</span>
+                                        </div>
+                                    </td>
+                                    <td class="product_quantity">                                      
+                                        <input class="quantity-input" type="number" min="1" value="{{ $quantity }}" name="quantity">
+                                        <input type="hidden" value="{{ $product->id }}"  name="product_id">                                               
+                                    </td>
+                                    <td>
+                                        <div class="cart_product_price">
+                                            <span>${{ $price }}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart_product_remove text-right">
+                                            <a href="/frontend/cart/delete/{{ $product->id }}"><i class="ion-android-close"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                 <!--coupon code area start-->
+                <div class="cart_page_bottom">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-6 col-sm-8">
+                            <div class="grand_totall_area">
+                               <div class="border-bottom">
+                                   <div class="cart_grandtotal d-flex justify-content-between">
+                                       <p> Total</p>
+                                       <span>${{$total}}</span>
+                                   </div>
+                               </div>
                             </div>
                         </div>
                     </div>
