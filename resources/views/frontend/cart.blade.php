@@ -119,7 +119,7 @@
                     </div>
                 </div>
             <!-- checkout -->
-            <div class="checkout_section" id="accordion" style="margin-top: 50px; >
+            <div class="checkout_section" id="accordion" style="margin-top: 50px;" >
                 <div class="container">
                     <div class="checkout_form">
                         <div class="row">
