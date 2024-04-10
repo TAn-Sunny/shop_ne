@@ -11,7 +11,7 @@
             
          
         </div>
-
+        <form action="/frontend/cart/add" method="post">
         <div class="mini_cart_footer">
            <div class="cart_button">
                 <a href="/frontend/cart"><i class="fa fa-shopping-cart"></i> View cart</a>
@@ -20,4 +20,7 @@
                 <a href="/frontend/checkout"><i class="fa fa-sign-in"></i> Checkout</a>
             </div>
         </div>
+        @csrf
+        </form>
+        
 </div>
