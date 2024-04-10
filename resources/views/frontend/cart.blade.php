@@ -38,6 +38,7 @@
     <div class="shopping_cart_area">
         <div class="container">
             <form action="/frontend/checkout/send" method="POST">
+                @csrf
                 <div class="cart_page_inner mb-60">
                     <div class="row">
                         <div class="col-12">
@@ -59,9 +60,10 @@
                                         @foreach($products as $product)
                                         @php
                                             $cart = Session::get('/frontend/cart');
-                                            $price = isset($cart[$product->id]) ? $product->price_sale * $cart[$product->id] : 0;
+                                            $quantity = isset($cart[$product->id]) ? $cart[$product->id] : 0;
+                                            $price = $product->price_sale * $quantity;
                                             $total += $price;
-                                            @endphp
+                                        @endphp
 
                                             <tr class="border-top">
                                                 <td>
@@ -80,29 +82,33 @@
                                                     </div>
                                                 </td>
                                                 <td class="product_quantity">
-                                                    <div class="cart_product_quantity">
-                                                    <input onKeyDown="return false" name="product_id[{{$product -> id}}]" type="number" value="{{ isset(Session::get('/frontend/cart')[$product -> id]) ? Session::get('/frontend/cart')[$product -> id] : 0 }}">
+                                                <form action="/frontend/cart/update" method="POST">
+                                                        
+                                                        <input class="quantity-input" type="number" min="1" value="{{ $cart ? $cart->quantity : 0 }}" name="quantity" onchange="this.form.submit()">
+                                                        <input type="hidden" value="{{$product -> id}}"  name="product_id">
+                                                        @csrf
+                                                        
+                                                    </form>
 
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="cart_product_price">
-                                                        <span>${{($price)}}</span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="cart_product_remove text-right">
-                                                        <a href="/frontend/cart/delete/{{$product -> id}}"><i class="ion-android-close"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                    <td>
+                                        <div class="cart_product_price">
+                                            <span>${{($price)}}</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart_product_remove text-right">
+                                            <a href="/frontend/cart/delete/{{$product -> id}}"><i class="ion-android-close"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                            </table>
                             </div>
-                         </div>
-                    </div>
-                </div>
+                            </div>
+                            </div>
+                            </div>
+
                  <!--coupon code area start-->
                 <div class="cart_page_bottom">
                     <div class="row">

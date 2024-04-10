@@ -280,7 +280,26 @@
             $('.mailchimp-error').html('' + resp.msg).fadeIn(900);
         }  
     }
- 
+
+    $('.quantity-input').on('input', function() {
+        // Lấy số lượng mới từ input
+        var newQuantity = $(this).val();
+        // Đảm bảo số lượng không nhỏ hơn 1
+        if (newQuantity < 1) {
+            newQuantity = 1;
+            $(this).val(newQuantity);
+        }
+    
+        // Lấy giá sản phẩm từ một phần tử HTML khác
+        var pricePerItem = parseFloat($(this).closest('tr').find('.cart_product_price span').text().substring(1));
+    
+        // Tính toán tổng giá mới
+        var newTotalPrice = newQuantity * pricePerItem;
+    
+        // Cập nhật tổng giá trong giao diện người dùng
+        $(this).closest('tr').find('.cart_product_total span').text('$' + newTotalPrice.toFixed(2));
+    });
+    
     
     /*---slider-range here---*/
     $( "#slider-range" ).slider({

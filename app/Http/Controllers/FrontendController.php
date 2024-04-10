@@ -42,6 +42,7 @@ class FrontendController extends Controller
     
     public function add_cart(Request $request){
         $product_id = $request -> product_id;
+        $quantity = $request -> product_quantity; // Lấy số lượng từ yêu cầu
         $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
     
         // Tìm giỏ hàng của người dùng hiện tại
@@ -52,6 +53,10 @@ class FrontendController extends Controller
             $cart = new UserCart;
             $cart->user_id = $user_id;
             $cart->product_id = $product_id;
+            $cart->quantity = $quantity;
+        } else {
+            // Nếu có, cập nhật số lượng sản phẩm
+            $cart->quantity += $quantity;
         }
     
         $cart->save();
@@ -59,16 +64,24 @@ class FrontendController extends Controller
         return redirect('/frontend/cart');
     }
     
+    
+    
+    
+    
+    
+    
+    
     public function show_cart(){
         $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
     
         // Lấy tất cả các mục giỏ hàng của người dùng hiện tại
         $cart_items = UserCart::where('user_id', $user_id)->get();
     
-        // Lấy thông tin sản phẩm cho mỗi mục giỏ hàng
+        // Lấy thông tin sản phẩm và số lượng cho mỗi mục giỏ hàng
         $products = [];
         foreach ($cart_items as $item) {
             $product = Product::find($item->product_id);
+            $product->quantity = $item->quantity; // Add quantity to product object
             $products[] = $product;
         }
     
@@ -79,12 +92,20 @@ class FrontendController extends Controller
     
 
     public function delete_cart(Request $request){
-        $cart = Session::get('/frontend/cart');
         $product_id = $request -> id;
-        unset($cart[$product_id]);
-        Session::put('/frontend/cart', $cart);
+        $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
+    
+        // Tìm sản phẩm trong giỏ hàng của người dùng hiện tại
+        $cart_item = UserCart::where('user_id', $user_id)->where('product_id', $product_id)->first();
+    
+        if ($cart_item) {
+            // Nếu tìm thấy, xóa sản phẩm khỏi giỏ hàng
+            $cart_item->delete();
+        }
+    
         return redirect('/frontend/cart');
     }
+    
     public function send_cart(Request $request){
         $token = Str::random(12);
         $order = new order;
@@ -106,7 +127,25 @@ class FrontendController extends Controller
         return redirect('/order/confirm');
 
     }
-
+    public function update_cart(Request $request){
+        $product_id = $request -> product_id;
+        $newQuantity = $request -> quantity;
+        $user_id = Auth::user()->id; // Lấy ID của người dùng hiện tại
+    
+        // Tìm giỏ hàng của người dùng hiện tại
+        $cart = UserCart::where('user_id', $user_id)->where('product_id', $product_id)->first();
+    
+        if ($cart) {
+            // Nếu có, cập nhật số lượng sản phẩm
+            $cart->quantity = $newQuantity;
+            $cart->save();
+        }
+    
+        // Chuyển hướng người dùng về trang giỏ hàng
+        return redirect('/frontend/cart');
+    }
+    
+    
     public function getSearch(Request $request){
        $product = product::where('name','like','%'.$request->key.'%') -> get();
        return view('frontend.search',compact('product'));

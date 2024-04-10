@@ -61,35 +61,36 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div class="product_d_right">
-                                <h1>{{$product -> name}}</h1>
-                                <div class="product_desc">
-                                    <p>{{$product -> material}}</p>
-                                </div>
-                                <div class="price_box">
-                                    <span class="current_price">{{$product -> price_sale}}</span>
-                                    <span class="old_price">{{$product -> price_nomal}}</span>
-                                </div>
-                                <div class="product_desc">
-                                    <p>{!!$product -> description!!}</p>
-                                </div>
-                                <div class="product_variant">
-                                    <div class="variant_quantity_btn d-flex">
-                                        <div class="pro-qty border">
-                                            <input onkeydown="return false" type="number" value="1" name="product_quantity">
-                                            <input type="hidden" value="{{$product -> id}}"  name="product_id">
-                                        </div>
-                                        <button class="button btn btn-primary" type="submit"></i>Add To Cart</button>
-                                    </div>
-                                </div>
-                            
-                        </div>
-                    </div>
+    <div class="product_d_right">
+        <h1>{{$product -> name}}</h1>
+        <div class="product_desc">
+            <p>{{$product -> material}}</p>
+        </div>
+        <div class="price_box">
+            <span class="current_price">{{$product -> price_sale}}</span>
+            <span class="old_price">{{$product -> price_nomal}}</span>
+        </div>
+        <div class="product_desc">
+            <p>{!!$product -> description!!}</p>
+        </div>
+        <div class="product_variant">
+            <div class="variant_quantity_btn d-flex">
+                <div class="pro-qty border">
+                    <input class="quantity-input" type="number" min="1" value="1" name="product_quantity">
+                    <input type="hidden" value="{{$product -> id}}"  name="product_id">
                 </div>
+                <button class="button btn btn-primary" type="submit"></i>Add To Cart</button>
             </div>
-        @csrf
-        </form>
-    </section>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+@csrf
+</form>
+</section>
+
+
     <!--product details end-->
 
     <!--product info start-->

@@ -83,6 +83,12 @@ Route::post('/frontend/cart/add',[FrontendController::class,'add_cart']);
 Route::get('/frontend/cart', [FrontendController::class,'show_cart']);
 Route::get('/frontend/cart/delete/{id}', [FrontendController::class,'delete_cart']);
 Route::post('/frontend/checkout/send', [FrontendController::class, 'send_cart']);
+Route::post('/frontend/cart/update', 'App\Http\Controllers\FrontendController@update_cart');
+
+
+
+
+
 
 //search
 Route::get('/frontend/search', [FrontendController::class, 'getSearch']) -> name('search');
@@ -112,7 +118,7 @@ Route::get('/login', 'App\Http\Controllers\LoginController@index')->name('login'
 Route::post('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 Route::get('/signup', 'App\Http\Controllers\SignupController@index');
-Route::post('/signup', 'App\Http\Controllers\\LoginController@signup');
+Route::post('/signup', 'App\Http\Controllers\LoginController@signup');
 Route::get('/laravel-coding/login/validate-email', 'App\Http\Controllers\EmailController@validateEmail');
 Route::post('/login/process-signup', 'App\Http\Controllers\SignUpController@signup')->name('login.process-signup');
 //frontend/login
