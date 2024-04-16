@@ -95,7 +95,7 @@
                      <!--shop toolbar end-->
                 <div class="row shop_wrapper">
                     @foreach($products as $product)
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-6">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-6">
                         <article class="col single_product">
                             <figure>
                                 <div class="product_thumb ">

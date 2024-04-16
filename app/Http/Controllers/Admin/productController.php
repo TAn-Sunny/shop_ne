@@ -30,7 +30,7 @@ class productController extends Controller
         return redirect() -> back();
     }
     public function list_product(){
-        $product = DB::table('products') -> paginate(10);
+        $product = DB::table('products') -> paginate(20);
         // $product = product::all();
         return view('admin.product.list',[
             'title' => 'Danh sách sản phẩm',

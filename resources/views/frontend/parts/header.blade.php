@@ -32,7 +32,7 @@
                                 <li class="header_search"><a href="#"><i class="icon-magnifier icons"></i></a></li>
                                 <li class="account_link">
                                 @if (Auth::check())
-                                    <a href="#"><i class="icon-user icons"></i><span style="font-size: 14px;">   </span><span style="font-size: 18px;">{{ Auth::user()->name }}</span></a>
+                                    <a href="#"><i class="icon-user icons"></i><span style="font-size: 14px;">   </span><span style="font-size: 18px;">Hello, {{ Auth::user()->name }}</span></a>
                                 @else
                                     <a href="#"><i class="icon-user icons"></i></a>
                                 @endif

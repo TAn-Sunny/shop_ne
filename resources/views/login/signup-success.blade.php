@@ -41,7 +41,7 @@
             <p> <span style="font-weight:bold;text-align-last:center;font-size:22px;">You have registered your account successfully!</span></p>
         </div>
         <div class="row-flex" style="display: flex; align-items: center;font-size:22px; margin-bottom: 10px;">
-            <p>This page will automatically redirect to the Login page in <span id="countdown" style="font-weight: bold">10</span> seconds or</p>
+            <p>This page will automatically redirect to the Login page in <span id="countdown" style="font-weight: bold">5</span> seconds or</p>
         </div>
         <br>
         <div onclick="window.location.href='/login';" class="main-btn" style="padding: 9px 20px; font-size:22px;font-weight:bold; background-color: #555; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; width: 100%; text-align: center;">CLICK HERE TO GO TO THE LOGIN PAGE</div>
@@ -50,7 +50,7 @@
 
 <script>
     // Đếm ngược từ 10 giây
-    var seconds = 10;
+    var seconds = 5;
 
     // Lấy phần tử span hiển thị thời gian đếm ngược
     var countdownElement = document.getElementById('countdown');
@@ -67,7 +67,7 @@
             // Dừng đếm ngược
             clearInterval(countdownInterval);
         }
-    }, 1000); // 1000 milliseconds = 1 giây
+    }, 500); // 1000 milliseconds = 1 giây
 </script>
 
 </body>
